@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GESMA – Geneva English-Speaking Muslims Association</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Reading progress bar -->
+  <div class="read-progress" id="readProgress"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/final-logo.png" alt="GESMA Logo" class="logo-mark">
+        <div class="logo-text">
+          <strong>GESMA</strong>
+          <span>Geneva English-Speaking Muslims Association</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="hamburger" onclick="toggleMobile()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div id="mobileNav">
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#programs" onclick="closeMobile()">Programs</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-geometric-pattern"></div>
+    <!-- Islamic decorative elements -->
+    <div class="hero-deco" aria-hidden="true">
+      <svg class="hero-deco-svg" viewBox="0 0 1440 210" preserveAspectRatio="xMidYMin meet" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- eave rope -->
+        <line x1="540" y1="1" x2="1440" y2="1" stroke="rgba(255,255,255,.12)" stroke-width="0.8" stroke-dasharray="8 5"/>
+
+        <!-- hd1: fanoos x=580 S=38 -->
+        <g transform="translate(580,0)"><g class="hang hd1"><line x1="0" y1="0" x2="0" y2="38" stroke="rgba(255,255,255,.42)" stroke-width="1" stroke-dasharray="3 2.5"/>
+          <circle cx="0" cy="41" r="3" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="none"/>
+          <line x1="0" y1="44" x2="0" y2="47" stroke="rgba(255,255,255,.70)" stroke-width="1.4"/>
+          <path d="M-18,62 Q-18,51 -9,48 Q0,45 9,48 Q18,51 18,62 Z" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <rect x="-18" y="62" width="36" height="55" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <line x1="-6" y1="62" x2="-6" y2="117" stroke="rgba(255,255,255,.38)" stroke-width=".8"/>
+          <line x1="6" y1="62" x2="6" y2="117" stroke="rgba(255,255,255,.38)" stroke-width=".8"/>
+          <path d="M-6,83 Q-6,64 0,63 Q6,64 6,83" stroke="rgba(255,255,255,.38)" stroke-width="1" fill="none"/>
+          <path d="M-18,85 Q-18,66 -12,65 Q-6,66 -6,85" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M6,85 Q6,66 12,65 Q18,66 18,85" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <line x1="-18" y1="92" x2="18" y2="92" stroke="rgba(255,255,255,.38)" stroke-width="1"/>
+          <path d="M0,100 L5,105 L-5,105 Z" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M0,110 L5,105 L-5,105 Z" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M-9,102 L-6,105 L-9,108 L-12,105 Z" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M9,102 L12,105 L9,108 L6,105 Z" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M-18,117 Q-18,129 -9,126 Q0,129 9,126 Q18,129 18,117 Z" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <line x1="0" y1="129" x2="0" y2="136" stroke="rgba(255,255,255,.70)" stroke-width="1.1"/>
+          <circle cx="0" cy="139" r="3" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="none"/>
+        </g></g>
+
+        <!-- hd2: big moon x=684 S=24 -->
+        <g transform="translate(684,0)"><g class="hang hd2"><line x1="0" y1="0" x2="0" y2="24" stroke="rgba(255,255,255,.42)" stroke-width="1" stroke-dasharray="3 2.5"/>
+          <circle cx="0" cy="27" r="2.5" stroke="rgba(255,255,255,.70)" stroke-width="1.1" fill="none"/>
+          <text x="0" y="68" text-anchor="middle" dominant-baseline="middle" font-size="54" fill="rgba(255,255,255,.62)">&#9789;</text>
+        </g></g>
+
+        <!-- hd3: qandeel x=788 S=34 -->
+        <g transform="translate(788,0)"><g class="hang hd3"><line x1="0" y1="0" x2="0" y2="34" stroke="rgba(255,255,255,.42)" stroke-width="1" stroke-dasharray="3 2.5"/>
+          <circle cx="0" cy="37" r="3" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="none"/>
+          <line x1="0" y1="40" x2="0" y2="43" stroke="rgba(255,255,255,.70)" stroke-width="1.4"/>
+          <path d="M-18,60 L-9,48 L0,41 L9,48 L18,60 Z" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <circle cx="0" cy="41" r="2" stroke="rgba(255,255,255,.70)" stroke-width="1" fill="none"/>
+          <circle cx="-9" cy="48" r="1.5" stroke="rgba(255,255,255,.70)" stroke-width="1" fill="none"/>
+          <circle cx="9" cy="48" r="1.5" stroke="rgba(255,255,255,.70)" stroke-width="1" fill="none"/>
+          <rect x="-18" y="60" width="36" height="55" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <line x1="-6" y1="60" x2="-6" y2="115" stroke="rgba(255,255,255,.38)" stroke-width=".8"/>
+          <line x1="6" y1="60" x2="6" y2="115" stroke="rgba(255,255,255,.38)" stroke-width=".8"/>
+          <path d="M-6,81 Q-6,62 0,61 Q6,62 6,81" stroke="rgba(255,255,255,.38)" stroke-width="1" fill="none"/>
+          <path d="M-18,83 Q-18,64 -12,63 Q-6,64 -6,83" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M6,83 Q6,64 12,63 Q18,64 18,83" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <line x1="-18" y1="90" x2="18" y2="90" stroke="rgba(255,255,255,.38)" stroke-width="1"/>
+          <path d="M0,97 L5,102 L0,107 L-5,102 Z" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M-4,98 L4,98 L4,106 L-4,106 Z" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <circle cx="0" cy="102" r="1.5" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M-9,99 L-6,102 L-9,105 L-12,102 Z" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M9,99 L12,102 L9,105 L6,102 Z" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M-18,115 L0,131 L18,115" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <line x1="0" y1="131" x2="0" y2="137" stroke="rgba(255,255,255,.70)" stroke-width="1.1"/>
+          <circle cx="0" cy="140" r="3" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="none"/>
+        </g></g>
+
+        <!-- hd4: fanoos x=892 S=46 -->
+        <g transform="translate(892,0)"><g class="hang hd4"><line x1="0" y1="0" x2="0" y2="46" stroke="rgba(255,255,255,.42)" stroke-width="1" stroke-dasharray="3 2.5"/>
+          <circle cx="0" cy="49" r="3" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="none"/>
+          <line x1="0" y1="52" x2="0" y2="55" stroke="rgba(255,255,255,.70)" stroke-width="1.4"/>
+          <path d="M-18,70 Q-18,59 -9,56 Q0,53 9,56 Q18,59 18,70 Z" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <rect x="-18" y="70" width="36" height="55" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <line x1="-6" y1="70" x2="-6" y2="125" stroke="rgba(255,255,255,.38)" stroke-width=".8"/>
+          <line x1="6" y1="70" x2="6" y2="125" stroke="rgba(255,255,255,.38)" stroke-width=".8"/>
+          <path d="M-6,91 Q-6,72 0,71 Q6,72 6,91" stroke="rgba(255,255,255,.38)" stroke-width="1" fill="none"/>
+          <path d="M-18,93 Q-18,74 -12,73 Q-6,74 -6,93" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M6,93 Q6,74 12,73 Q18,74 18,93" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <line x1="-18" y1="100" x2="18" y2="100" stroke="rgba(255,255,255,.38)" stroke-width="1"/>
+          <path d="M0,108 L5,113 L-5,113 Z" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M0,118 L5,113 L-5,113 Z" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M-9,110 L-6,113 L-9,116 L-12,113 Z" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M9,110 L12,113 L9,116 L6,113 Z" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M-18,125 Q-18,137 -9,134 Q0,137 9,134 Q18,137 18,125 Z" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <line x1="0" y1="137" x2="0" y2="144" stroke="rgba(255,255,255,.70)" stroke-width="1.1"/>
+          <circle cx="0" cy="147" r="3" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="none"/>
+        </g></g>
+
+        <!-- hd5: big moon x=996 S=44 -->
+        <g transform="translate(996,0)"><g class="hang hd5"><line x1="0" y1="0" x2="0" y2="44" stroke="rgba(255,255,255,.42)" stroke-width="1" stroke-dasharray="3 2.5"/>
+          <circle cx="0" cy="47" r="2.5" stroke="rgba(255,255,255,.70)" stroke-width="1.1" fill="none"/>
+          <text x="0" y="88" text-anchor="middle" dominant-baseline="middle" font-size="54" fill="rgba(255,255,255,.62)">&#9789;</text>
+        </g></g>
+
+        <!-- hd6: qandeel x=1100 S=28 -->
+        <g transform="translate(1100,0)"><g class="hang hd6"><line x1="0" y1="0" x2="0" y2="28" stroke="rgba(255,255,255,.42)" stroke-width="1" stroke-dasharray="3 2.5"/>
+          <circle cx="0" cy="31" r="3" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="none"/>
+          <line x1="0" y1="34" x2="0" y2="37" stroke="rgba(255,255,255,.70)" stroke-width="1.4"/>
+          <path d="M-18,54 L-9,42 L0,35 L9,42 L18,54 Z" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <circle cx="0" cy="35" r="2" stroke="rgba(255,255,255,.70)" stroke-width="1" fill="none"/>
+          <circle cx="-9" cy="42" r="1.5" stroke="rgba(255,255,255,.70)" stroke-width="1" fill="none"/>
+          <circle cx="9" cy="42" r="1.5" stroke="rgba(255,255,255,.70)" stroke-width="1" fill="none"/>
+          <rect x="-18" y="54" width="36" height="55" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <line x1="-6" y1="54" x2="-6" y2="109" stroke="rgba(255,255,255,.38)" stroke-width=".8"/>
+          <line x1="6" y1="54" x2="6" y2="109" stroke="rgba(255,255,255,.38)" stroke-width=".8"/>
+          <path d="M-6,75 Q-6,56 0,55 Q6,56 6,75" stroke="rgba(255,255,255,.38)" stroke-width="1" fill="none"/>
+          <path d="M-18,77 Q-18,58 -12,57 Q-6,58 -6,77" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M6,77 Q6,58 12,57 Q18,58 18,77" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <line x1="-18" y1="84" x2="18" y2="84" stroke="rgba(255,255,255,.38)" stroke-width="1"/>
+          <path d="M0,91 L5,96 L0,101 L-5,96 Z" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M-4,92 L4,92 L4,100 L-4,100 Z" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <circle cx="0" cy="96" r="1.5" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M-9,93 L-6,96 L-9,99 L-12,96 Z" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M9,93 L12,96 L9,99 L6,96 Z" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M-18,109 L0,125 L18,109" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <line x1="0" y1="125" x2="0" y2="131" stroke="rgba(255,255,255,.70)" stroke-width="1.1"/>
+          <circle cx="0" cy="134" r="3" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="none"/>
+        </g></g>
+
+        <!-- hd7: fanoos x=1204 S=50 -->
+        <g transform="translate(1204,0)"><g class="hang hd7"><line x1="0" y1="0" x2="0" y2="50" stroke="rgba(255,255,255,.42)" stroke-width="1" stroke-dasharray="3 2.5"/>
+          <circle cx="0" cy="53" r="3" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="none"/>
+          <line x1="0" y1="56" x2="0" y2="59" stroke="rgba(255,255,255,.70)" stroke-width="1.4"/>
+          <path d="M-18,74 Q-18,63 -9,60 Q0,57 9,60 Q18,63 18,74 Z" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <rect x="-18" y="74" width="36" height="55" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <line x1="-6" y1="74" x2="-6" y2="129" stroke="rgba(255,255,255,.38)" stroke-width=".8"/>
+          <line x1="6" y1="74" x2="6" y2="129" stroke="rgba(255,255,255,.38)" stroke-width=".8"/>
+          <path d="M-6,95 Q-6,76 0,75 Q6,76 6,95" stroke="rgba(255,255,255,.38)" stroke-width="1" fill="none"/>
+          <path d="M-18,97 Q-18,78 -12,77 Q-6,78 -6,97" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M6,97 Q6,78 12,77 Q18,78 18,97" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <line x1="-18" y1="104" x2="18" y2="104" stroke="rgba(255,255,255,.38)" stroke-width="1"/>
+          <path d="M0,112 L5,117 L-5,117 Z" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M0,122 L5,117 L-5,117 Z" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M-9,114 L-6,117 L-9,120 L-12,117 Z" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M9,114 L12,117 L9,120 L6,117 Z" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M-18,129 Q-18,141 -9,138 Q0,141 9,138 Q18,141 18,129 Z" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <line x1="0" y1="141" x2="0" y2="148" stroke="rgba(255,255,255,.70)" stroke-width="1.1"/>
+          <circle cx="0" cy="151" r="3" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="none"/>
+        </g></g>
+
+        <!-- hd8: big moon x=1308 S=18 -->
+        <g transform="translate(1308,0)"><g class="hang hd8"><line x1="0" y1="0" x2="0" y2="18" stroke="rgba(255,255,255,.42)" stroke-width="1" stroke-dasharray="3 2.5"/>
+          <circle cx="0" cy="21" r="2.5" stroke="rgba(255,255,255,.70)" stroke-width="1.1" fill="none"/>
+          <text x="0" y="62" text-anchor="middle" dominant-baseline="middle" font-size="54" fill="rgba(255,255,255,.62)">&#9789;</text>
+        </g></g>
+
+        <!-- hd9: qandeel x=1412 S=36 -->
+        <g transform="translate(1412,0)"><g class="hang hd9"><line x1="0" y1="0" x2="0" y2="36" stroke="rgba(255,255,255,.42)" stroke-width="1" stroke-dasharray="3 2.5"/>
+          <circle cx="0" cy="39" r="3" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="none"/>
+          <line x1="0" y1="42" x2="0" y2="45" stroke="rgba(255,255,255,.70)" stroke-width="1.4"/>
+          <path d="M-18,62 L-9,50 L0,43 L9,50 L18,62 Z" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <circle cx="0" cy="43" r="2" stroke="rgba(255,255,255,.70)" stroke-width="1" fill="none"/>
+          <circle cx="-9" cy="50" r="1.5" stroke="rgba(255,255,255,.70)" stroke-width="1" fill="none"/>
+          <circle cx="9" cy="50" r="1.5" stroke="rgba(255,255,255,.70)" stroke-width="1" fill="none"/>
+          <rect x="-18" y="62" width="36" height="55" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <line x1="-6" y1="62" x2="-6" y2="117" stroke="rgba(255,255,255,.38)" stroke-width=".8"/>
+          <line x1="6" y1="62" x2="6" y2="117" stroke="rgba(255,255,255,.38)" stroke-width=".8"/>
+          <path d="M-6,83 Q-6,64 0,63 Q6,64 6,83" stroke="rgba(255,255,255,.38)" stroke-width="1" fill="none"/>
+          <path d="M-18,85 Q-18,66 -12,65 Q-6,66 -6,85" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M6,85 Q6,66 12,65 Q18,66 18,85" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <line x1="-18" y1="92" x2="18" y2="92" stroke="rgba(255,255,255,.38)" stroke-width="1"/>
+          <path d="M0,99 L5,104 L0,109 L-5,104 Z" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <path d="M-4,100 L4,100 L4,108 L-4,108 Z" stroke="rgba(255,255,255,.38)" stroke-width=".9" fill="none"/>
+          <circle cx="0" cy="104" r="1.5" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M-9,101 L-6,104 L-9,107 L-12,104 Z" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M9,101 L12,104 L9,107 L6,104 Z" stroke="rgba(255,255,255,.38)" stroke-width=".8" fill="none"/>
+          <path d="M-18,117 L0,133 L18,117" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="rgba(255,255,255,.05)"/>
+          <line x1="0" y1="133" x2="0" y2="139" stroke="rgba(255,255,255,.70)" stroke-width="1.1"/>
+          <circle cx="0" cy="142" r="3" stroke="rgba(255,255,255,.70)" stroke-width="1.2" fill="none"/>
+        </g></g>
+
+        <!-- stars -->
+        <text class="deco-star ds1" x="632" y="36" text-anchor="middle" dominant-baseline="middle" font-size="8">&#10022;</text>
+        <text class="deco-star ds2" x="736" y="62" text-anchor="middle" dominant-baseline="middle" font-size="6">&#9733;</text>
+        <text class="deco-star ds3" x="840" y="28" text-anchor="middle" dominant-baseline="middle" font-size="9">&#10022;</text>
+        <text class="deco-star ds4" x="944" y="68" text-anchor="middle" dominant-baseline="middle" font-size="7">&#10022;</text>
+        <text class="deco-star ds5" x="1048" y="40" text-anchor="middle" dominant-baseline="middle" font-size="8">&#10022;</text>
+        <text class="deco-star ds6" x="1152" y="22" text-anchor="middle" dominant-baseline="middle" font-size="6">&#9733;</text>
+        <text class="deco-star ds7" x="1256" y="70" text-anchor="middle" dominant-baseline="middle" font-size="9">&#10022;</text>
+        <text class="deco-star ds8" x="1360" y="36" text-anchor="middle" dominant-baseline="middle" font-size="7">&#10022;</text>
+        <text class="deco-star ds9" x="1432" y="58" text-anchor="middle" dominant-baseline="middle" font-size="8">&#10022;</text>
+      </svg>
+
+      <!-- Conversation bubbles -->
+      <div class="chat-bubble cb1">How do I stay strong<br>in my faith?</div>
+      <div class="chat-bubble cb2">How do I build a real<br>connection with Allah?</div>
+      <div class="chat-bubble cb3">How do I live Islam<br>in today's world?</div>
+
+    </div>
+    <div class="hero-inner">
+      <h1 class="hero-title">Where Your Family<br>Finds Faith &amp; <em>Belonging</em></h1>
+      <p class="hero-sub">Geneva's only English-speaking Islamic community — where Muslim <span class="tw-wrap"><span class="tw-word"></span><span class="tw-cursor"></span></span> find faith, identity, and a true sense of belonging.</p>
+      <div class="hero-btns">
+        <button class="btn-hero-gold" onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-book-open"></i> Our Programs
+        </button>
+        <button class="btn-hero-outline"
+          onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-envelope"></i> Get In Touch
+        </button>
+      </div>
+    </div>
+    <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" role="button" aria-label="Scroll to next section">
+      <div class="scroll-arrow"><i class="fas fa-chevron-down" style="font-size:11px"></i></div>
+      <span>Scroll</span>
+    </div>
+  </header>
+
+  <!-- WHO WE ARE -->
+  <section id="about">
+    <div class="container">
+      <div class="who-inner">
+        <div class="fade-left">
+          <span class="tag tag-blue">Who We Are</span>
+          <h2 class="section-title">A Home for Muslims<br><em>in the Heart of Geneva</em></h2>
+          <div class="divider"></div>
+          <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:16px">Geneva is one of the most international cities in the world — yet for many English-speaking Muslim families, finding a community that truly feels like home can be a real challenge. <strong style="color:var(--navy)">GESMA was built to change that.</strong></p>
+          <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:16px">We are a community association dedicated to nurturing the faith, identity, and confidence of English-speaking Muslims across Geneva and its surroundings. From structured Islamic education for children to open discussions for teenagers and parents — everything we do is designed to help families <em>thrive</em>, not just survive, as Muslims in the West.</p>
+          <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:32px">We believe that being a good Muslim and a proud member of Swiss society are not in conflict — they go hand in hand. Our community is welcoming, multicultural, and built on values of respect, service, and genuine belonging.</p>
+          <a href="#contact"
+            style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:white;padding:13px 28px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:600;transition:all var(--transition)"
+            onmouseover="this.style.background='var(--blue)'" onmouseout="this.style.background='var(--navy)'">
+            <i class="fas fa-users"></i> Join Our Community
+          </a>
+        </div>
+        <div class="fade-right">
+          <div class="faq-accordion">
+            <div class="faq-item faq-open">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span><i class="fas fa-users faq-ico"></i> Who is GESMA for?</span>
+                <i class="fas fa-chevron-down faq-arrow"></i>
+              </button>
+              <div class="faq-a">
+                <p>For any English-speaking Muslim family in or around Geneva. Whether you arrived last month or have lived here for years, GESMA is your community. Our programs serve children from age 6, teenagers, and parents — all taught in English, in a welcoming multicultural setting.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span><i class="fas fa-star faq-ico"></i> What makes GESMA different?</span>
+                <i class="fas fa-chevron-down faq-arrow"></i>
+              </button>
+              <div class="faq-a">
+                <p>Most Islamic education in Geneva is in French or Arabic — leaving English-speaking families with very few options. GESMA fills that gap with a structured, English-medium curriculum trusted by scholars across the UK and South Asia, in a warm environment that genuinely understands the international Muslim experience.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span><i class="fas fa-door-open faq-ico"></i> Do I need to be a member to join?</span>
+                <i class="fas fa-chevron-down faq-arrow"></i>
+              </button>
+              <div class="faq-a">
+                <p>Not at all. You're welcome to reach out, visit, and enrol your children without any formal membership. We believe the community should be open and accessible to everyone — just get in touch and we'll guide you through the next steps.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span><i class="fas fa-map-marker-alt faq-ico"></i> Where and when are classes held?</span>
+                <i class="fas fa-chevron-down faq-arrow"></i>
+              </button>
+              <div class="faq-a">
+                <p>Classes run every <strong>Friday from 5:30 to 7:30 PM</strong>. Our venue details are coming soon — contact us directly and we'll share everything you need to find us and get started.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testi-section">
+    <div class="container">
+      <div class="tc fade-up">
+        <span class="tag tag-blue">Community Voices</span>
+        <h2 class="section-title">What Families <em>Say About Us</em></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="testi-slider fade-up">
+        <div class="testi-track">
+
+          <div class="testi-slide testi-active">
+            <div class="testi-card">
+              <div class="testi-quote-mark">&#10077;</div>
+              <p class="testi-text">GESMA gave my children a real Islamic identity while growing up in Geneva. In a city where it's hard to find English-speaking Muslim community, this has been a true blessing for our family.</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:var(--blue)">S</div>
+                <div class="testi-author-text">
+                  <strong>Sarah M.</strong>
+                  <span>Parent &middot; 3 years with GESMA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="testi-quote-mark">&#10077;</div>
+              <p class="testi-text">The Youth Series discussions were unlike anything I'd experienced before — real conversations about real challenges, in English, with people who truly understand what it means to be Muslim in Switzerland.</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:var(--navy)">A</div>
+                <div class="testi-author-text">
+                  <strong>Ahmed K.</strong>
+                  <span>Youth Series &middot; Ages 15+</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="testi-quote-mark">&#10077;</div>
+              <p class="testi-text">As an expat family we struggled to find Islamic education for our kids that was actually in English. GESMA filled that gap completely. The teachers are dedicated and the community genuinely feels like family.</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:#1b6e3f">F</div>
+                <div class="testi-author-text">
+                  <strong>Fatima R.</strong>
+                  <span>Parent of two &middot; Beginners &amp; Elementary</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="testi-quote-mark">&#10077;</div>
+              <p class="testi-text">What I love most about GESMA is how welcoming it is. Families from so many different countries, all coming together with the same purpose. It's a beautiful example of multicultural Islam in action.</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:#7b3fa0">O</div>
+                <div class="testi-author-text">
+                  <strong>Omar T.</strong>
+                  <span>Community Member &middot; Geneva</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="testi-controls">
+          <button class="testi-arrow" id="testiPrev" onclick="testiNav(-1)" aria-label="Previous">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="testi-dots" id="testiDots">
+            <button class="testi-dot testi-dot-active" onclick="testiGoTo(0)"></button>
+            <button class="testi-dot" onclick="testiGoTo(1)"></button>
+            <button class="testi-dot" onclick="testiGoTo(2)"></button>
+            <button class="testi-dot" onclick="testiGoTo(3)"></button>
+          </div>
+          <button class="testi-arrow" id="testiNext" onclick="testiNav(1)" aria-label="Next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="programs-section" id="programs">
+    <div class="container">
+      <div class="tc fade-up">
+        <span class="tag tag-blue">Learn &amp; Grow</span>
+        <h2 class="section-title">Our <em>Programs</em></h2>
+        <div class="divider"></div>
+        <p class="section-desc">Structured Islamic studies for children and youth, tailored to different age groups. All
+          classes are taught in English — ideal for international and multicultural families in Geneva.</p>
+      </div>
+
+      <div class="prog-filter-tabs fade-up">
+        <button class="pf-tab pf-active" onclick="filterPrograms('all', this)">All Programs <span class="pf-count"></span></button>
+        <button class="pf-tab" onclick="filterPrograms('6-9', this)">Ages 6–9 <span class="pf-count"></span></button>
+        <button class="pf-tab" onclick="filterPrograms('10-14', this)">Ages 10–14 <span class="pf-count"></span></button>
+        <button class="pf-tab" onclick="filterPrograms('15plus', this)">Ages 15+ <span class="pf-count"></span></button>
+        <button class="pf-tab" onclick="filterPrograms('parents', this)">Parents <span class="pf-count"></span></button>
+      </div>
+
+      <div class="prog-grid">
+
+        <div class="prog-card fade-up delay-1" data-filter="6-9" onclick="openModal('beginners')">
+          <div class="prog-inner">
+            <div class="prog-front">
+              <div class="prog-age-badge"><i class="fas fa-child"></i> Ages 6–7 · Book 1</div>
+              <h3>Islamic Studies Beginners</h3>
+              <p>A foundational introduction to Islamic teachings, values, and daily practice for young learners.</p>
+              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Fridays: 5:30 – 7:30 PM</div>
+              <div class="prog-hint"><i class="fas fa-sync-alt"></i> Hover to see full details</div>
+            </div>
+            <div class="prog-back pb-navy">
+              <div>
+                <div class="prog-back-badge"><i class="fas fa-child"></i> Ages 6–7 · Book 1</div>
+                <h3>Islamic Studies Beginners</h3>
+                <ul>
+                  <li>Introduction to the five pillars of Islam</li>
+                  <li>Arabic letters and basic Islamic vocabulary</li>
+                  <li>Stories of the Prophets (peace be upon them)</li>
+                  <li>Islamic manners and daily du'as</li>
+                  <li>Aqeedah foundations for children</li>
+                </ul>
+              </div>
+              <button class="prog-enroll" onclick="openModal('beginners');event.stopPropagation()"><i
+                  class="fas fa-info-circle"></i> Full Details & Enrol</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prog-card fade-up delay-2" data-filter="6-9" onclick="openModal('elementary')">
+          <div class="prog-inner">
+            <div class="prog-front">
+              <div class="prog-age-badge"><i class="fas fa-child"></i> Ages 8–9 · Book 2</div>
+              <h3>Islamic Studies Elementary</h3>
+              <p>Continuing education building on Book 1, deepening prayer, worship, and Islamic practice.</p>
+              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Fridays: 5:30 – 7:30 PM</div>
+              <div class="prog-hint"><i class="fas fa-sync-alt"></i> Hover to see full details</div>
+            </div>
+            <div class="prog-back pb-blue">
+              <div>
+                <div class="prog-back-badge"><i class="fas fa-child"></i> Ages 8–9 · Book 2</div>
+                <h3>Islamic Studies Elementary</h3>
+                <ul>
+                  <li>Deeper study of Islamic worship and prayer</li>
+                  <li>Prayer — method, significance and khushoo'</li>
+                  <li>Seerah of the Prophet ﷺ</li>
+                  <li>Basic Islamic jurisprudence (fiqh)</li>
+                  <li>Character building through Islamic ethics</li>
+                </ul>
+              </div>
+              <button class="prog-enroll" onclick="openModal('elementary');event.stopPropagation()"><i
+                  class="fas fa-info-circle"></i> Full Details & Enrol</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prog-card fade-up delay-3" data-filter="10-14" onclick="openModal('boysgroup')">
+          <div class="prog-inner">
+            <div class="prog-front">
+              <div class="prog-age-badge"><i class="fas fa-male"></i> Ages 10–14 · Boys</div>
+              <h3>Islamic Studies Boys Group</h3>
+              <p>Intermediate studies covering Islamic history, ethics, and moral education for boys.</p>
+              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Fridays: 5:30 – 7:30 PM</div>
+              <div class="prog-hint"><i class="fas fa-sync-alt"></i> Hover to see full details</div>
+            </div>
+            <div class="prog-back pb-teal">
+              <div>
+                <div class="prog-back-badge"><i class="fas fa-male"></i> Ages 10–14 · Boys</div>
+                <h3>Islamic Studies Boys Group</h3>
+                <ul>
+                  <li>Islamic studies circles and group discussion</li>
+                  <li>Islamic history and civilisation</li>
+                  <li>Ethics, character, and responsibility</li>
+                  <li>Contemporary Islamic issues for youth</li>
+                  <li>Peer mentoring and brotherhood</li>
+                </ul>
+              </div>
+              <button class="prog-enroll" onclick="openModal('boysgroup');event.stopPropagation()"><i
+                  class="fas fa-info-circle"></i> Full Details & Enrol</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prog-card fade-up delay-4" data-filter="10-14" onclick="openModal('girlsgroup')">
+          <div class="prog-inner">
+            <div class="prog-front">
+              <div class="prog-age-badge"><i class="fas fa-female"></i> Ages 10–14 · Girls</div>
+              <h3>Islamic Studies Girls Group</h3>
+              <p>Intermediate studies covering Islamic history, ethics, and moral education for girls.</p>
+              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Fridays: 5:30 – 7:30 PM</div>
+              <div class="prog-hint"><i class="fas fa-sync-alt"></i> Hover to see full details</div>
+            </div>
+            <div class="prog-back pb-deep">
+              <div>
+                <div class="prog-back-badge"><i class="fas fa-female"></i> Ages 10–14 · Girls</div>
+                <h3>Islamic Studies Girls Group</h3>
+                <ul>
+                  <li>Islamic vocabulary and foundational knowledge</li>
+                  <li>Role models in Islamic history (Khadijah, Aisha RA)</li>
+                  <li>Islamic etiquette and sisterhood</li>
+                  <li>Faith, identity, and confidence</li>
+                  <li>Creative Islamic arts and activities</li>
+                </ul>
+              </div>
+              <button class="prog-enroll" onclick="openModal('girlsgroup');event.stopPropagation()"><i
+                  class="fas fa-info-circle"></i> Full Details & Enrol</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prog-card fade-up delay-5" data-filter="15plus" onclick="openModal('youthboys')">
+          <div class="prog-popular-badge"><i class="fas fa-star"></i> Most Popular</div>
+          <div class="prog-inner">
+            <div class="prog-front">
+              <div class="prog-age-badge"><i class="fas fa-comments"></i> Ages 15+ · Boys</div>
+              <h3>Youth Series – Boys</h3>
+              <p>An engaging series for teenage boys exploring important questions about faith, life, and identity in today's world.</p>
+              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Twice monthly · Ages 15+</div>
+              <div class="prog-hint"><i class="fas fa-sync-alt"></i> Hover to see full details</div>
+            </div>
+            <div class="prog-back pb-green">
+              <div>
+                <div class="prog-back-badge"><i class="fas fa-comments"></i> Ages 15+ · Boys</div>
+                <h3>Youth Series – Boys</h3>
+                <ul>
+                  <li>Faith & belief — strengthening core beliefs in the modern world</li>
+                  <li>Life & struggles — dealing with hardship, anxiety, and uncertainty</li>
+                  <li>Identity & character — living Islam confidently in everyday life</li>
+                  <li>Contemporary challenges — social media, materialism, peer pressure</li>
+                  <li>Essentials & devotional practice — worship habits and Prophetic guidance</li>
+                </ul>
+              </div>
+              <button class="prog-enroll" onclick="openModal('youthboys');event.stopPropagation()"><i
+                  class="fas fa-info-circle"></i> Full Details & Enrol</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prog-card fade-up delay-6" data-filter="15plus" onclick="openModal('youthgirls')">
+          <div class="prog-inner">
+            <div class="prog-front">
+              <div class="prog-age-badge"><i class="fas fa-comments"></i> Ages 15+ · Girls</div>
+              <h3>Youth Series – Girls</h3>
+              <p>An engaging series for teenage girls exploring important questions about faith, life, and identity in today's world.</p>
+              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Twice monthly · Ages 15+</div>
+              <div class="prog-hint"><i class="fas fa-sync-alt"></i> Hover to see full details</div>
+            </div>
+            <div class="prog-back pb-deep">
+              <div>
+                <div class="prog-back-badge"><i class="fas fa-comments"></i> Ages 15+ · Girls</div>
+                <h3>Youth Series – Girls</h3>
+                <ul>
+                  <li>Faith & belief — strengthening core beliefs in the modern world</li>
+                  <li>Life & struggles — dealing with hardship, anxiety, and uncertainty</li>
+                  <li>Identity & character — living Islam confidently in everyday life</li>
+                  <li>Contemporary challenges — social media, materialism, peer pressure</li>
+                  <li>Essentials & devotional practice — worship habits and Prophetic guidance</li>
+                </ul>
+              </div>
+              <button class="prog-enroll" onclick="openModal('youthgirls');event.stopPropagation()"><i
+                  class="fas fa-info-circle"></i> Full Details & Enrol</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prog-card fade-up delay-7" data-filter="parents" onclick="openModal('parental')">
+          <div class="prog-inner">
+            <div class="prog-front">
+              <div class="prog-age-badge"><i class="fas fa-users"></i> For Parents</div>
+              <h3>Parental Classes</h3>
+              <p>A dedicated program to support Muslim parents raising children with strong Islamic identity.</p>
+              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> <span
+                  style="background:var(--blue-bg);color:var(--blue);padding:2px 10px;border-radius:50px;font-size:11px;font-weight:700">COMING
+                  SOON</span></div>
+              <div class="prog-hint"><i class="fas fa-sync-alt"></i> Hover to see full details</div>
+            </div>
+            <div class="prog-back pb-gold">
+              <div>
+                <div class="prog-back-badge"><i class="fas fa-users"></i> For Parents</div>
+                <h3>Parental Classes</h3>
+                <ul>
+                  <li>Raising children with Islamic values in the West</li>
+                  <li>Practical parenting tools from Sunnah</li>
+                  <li>Supporting your child's Islamic identity</li>
+                  <li>Q&amp;A sessions with qualified scholars</li>
+                  <li>Peer support network for Muslim parents</li>
+                </ul>
+              </div>
+              <button class="prog-enroll" onclick="openModal('parental');event.stopPropagation()"><i
+                  class="fas fa-info-circle"></i> Register Interest</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="curriculum-note fade-up" style="margin-top:24px">
+        <div class="curr-icon"><i class="fas fa-book"></i></div>
+        <div class="curr-text">
+          <strong>About Our Curriculum:</strong>
+          <p>Our syllabus is built on the <em>An-Nasihah Islamic Curriculum</em> — a comprehensive, structured programme developed by leading Shaikhs and Ulama from <em>Darul Uloom Leicester</em>, Dewsbury, Bury, and <em>Fatah al-Dawah</em> (India &amp; South Africa). Refined over many years, it is widely regarded as one of the most trusted English-medium Islamic education frameworks available today. <a href="https://an-nasihah.com/islamic-curriculum/" target="_blank" rel="noopener">Explore the curriculum →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="tc fade-up">
+        <span class="tag tag-blue">Get In Touch</span>
+        <h2 class="section-title">Contact &amp; <em>Location</em></h2>
+        <div class="divider"></div>
+        <p class="section-desc">We'd love to hear from you. Whether you're looking to enrol your children, join our
+          community, or learn more about GESMA — reach out and we'll be happy to help.</p>
+      </div>
+      <div class="contact-inner">
+        <div class="contact-form-wrap fade-left">
+          <h3>Send Us a Message</h3>
+          <div class="fg-row">
+            <div class="fg" id="fg-fname"><label>First Name</label><input id="fName" type="text" placeholder="Ahmad" /><span class="fg-msg"></span></div>
+            <div class="fg" id="fg-lname"><label>Last Name</label><input id="fLName" type="text" placeholder="Hassan" /><span class="fg-msg"></span></div>
+          </div>
+          <div class="fg" id="fg-email"><label>Email Address</label><input id="fEmail" type="email" placeholder="your@email.com" /><span class="fg-msg"></span></div>
+          <div class="fg"><label>Phone (optional)</label><input type="tel" placeholder="+41 79 000 00 00" /></div>
+          <div class="fg">
+            <label>Subject</label>
+            <select>
+              <option>Enrol my child in a program</option>
+              <option>General enquiry about GESMA</option>
+              <option>Youth Series information</option>
+              <option>Parental Classes interest</option>
+              <option>Volunteer / Get involved</option>
+              <option>Partnership or inter-faith dialogue</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg" id="fg-msg"><label>Message</label><textarea id="fMsg" placeholder="Tell us how we can help…"></textarea><span class="fg-msg"></span></div>
+          <button class="btn-send" onclick="sendMsg(this)">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </div>
+        <div class="contact-map-col fade-right">
+          <div class="contact-info-cards">
+            <div class="ci-card">
+              <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="ci-text">
+                <p>Our Location</p>
+                <p>Coming Soon</p>
+              </div>
+            </div>
+            <div class="ci-card ci-copyable" onclick="copyToClipboard('info@gesma.ch', this)" role="button" tabindex="0">
+              <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+              <div class="ci-text">
+                <p>Email <span class="ci-copy-hint"><i class="fas fa-copy"></i> click to copy</span></p>
+                <p>info@gesma.ch</p>
+              </div>
+            </div>
+            <div class="ci-card">
+              <div class="ci-icon"><i class="fas fa-clock"></i></div>
+              <div class="ci-text">
+                <p>Classes</p>
+                <p>Fridays 5:30–7:30 PM · Twice monthly (Youth)</p>
+              </div>
+            </div>
+            <div class="ci-card">
+              <div class="ci-icon"><i class="fas fa-language"></i></div>
+              <div class="ci-text">
+                <p>Language</p>
+                <p>All programs taught in English</p>
+              </div>
+            </div>
+          </div>
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43657.5!2d6.1432!3d46.2044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c65176a4dc44d%3A0x9e3e1d04de0cbe9e!2sGeneva%2C%20Switzerland!5e0!3m2!1sen!2sch!4v1700000000000"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-wrap">
+            <img src="assets/final-logo.png" alt="GESMA Logo" class="logo-mark-footer" style="background:none;border:none;padding:0;width:44px;height:44px;object-fit:contain;border-radius:0;filter:brightness(0) invert(1);">
+            <div class="logo-text">
+              <strong style="color:white;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700">GESMA</strong>
+              <span style="color:rgba(255,255,255,.45);font-size:10px;letter-spacing:2px;text-transform:uppercase">Geneva · Switzerland</span>
+            </div>
+          </div>
+          <p>A welcoming home for English-speaking Muslims in Geneva — nurturing faith, knowledge and community since
+            2024.</p>
+          <div class="social-bar">
+            <a href="#" class="soc"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="soc"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="soc"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="soc"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="soc"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="#">Islamic Studies – Beginners</a></li>
+            <li><a href="#">Islamic Studies – Elementary</a></li>
+            <li><a href="#">Boys Group (10–14)</a></li>
+            <li><a href="#">Girls Group (10–14)</a></li>
+            <li><a href="#">Youth Series (15+)</a></li>
+            <li><a href="#">Parental Classes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Organisation</h4>
+          <ul>
+            <li><a href="#about">About GESMA</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#contact">Enrolment</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Safeguarding Policy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 GESMA — Geneva English-Speaking Muslims Association. All rights reserved.</span>
+        <div style="display:flex;gap:20px">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROGRAM MODAL -->
+  <div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+    <div class="modal-box" id="modalBox">
+      <button class="modal-nav modal-nav-prev" onclick="modalNav(-1)" aria-label="Previous program"><i class="fas fa-chevron-left"></i></button>
+      <button class="modal-nav modal-nav-next" onclick="modalNav(1)" aria-label="Next program"><i class="fas fa-chevron-right"></i></button>
+      <div class="modal-header" id="modalHeader" style="position:relative">
+        <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+        <div id="modalBadge"></div>
+        <h2 id="modalTitle"></h2>
+        <p id="modalSubtitle"></p>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Floating Enrol Button -->
+  <button class="float-enrol" id="floatEnrol" onclick="presetContactSubject('Enrol my child in a program')">
+    <i class="fas fa-book-open"></i>
+    <span>Enrol Now</span>
+  </button>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
