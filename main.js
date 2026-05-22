@@ -385,6 +385,13 @@ document.addEventListener('keydown', e => {
     window.testiNav   = (dir) => { goTo(current + dir); reset(); };
     window.testiGoTo  = (n)   => { goTo(n); reset(); };
 
+    // #12 pause on hover
+    const slider = document.querySelector('.testi-slider');
+    if (slider) {
+        slider.addEventListener('mouseenter', () => clearInterval(timer));
+        slider.addEventListener('mouseleave', () => start());
+    }
+
     start();
 })();
 
@@ -425,6 +432,87 @@ document.addEventListener('keydown', e => {
     }, { passive: true });
 })();
 
+/* ── program card cursor glow ────────────────────────────── */
+(function () {
+    document.querySelectorAll('.prog-card').forEach(card => {
+        const front = card.querySelector('.prog-front');
+        if (!front) return;
+        card.addEventListener('mousemove', e => {
+            const r = front.getBoundingClientRect();
+            front.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+            front.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        });
+    });
+})();
+
+/* ── quranic verse calligraphy reveal ────────────────────── */
+(function () {
+    const section = document.getElementById('qb-section');
+    const arabic  = document.getElementById('qb-arabic');
+    if (!section || !arabic) return;
+
+    const alreadySeen = sessionStorage.getItem('qbSeen');
+
+    if (alreadySeen) {
+        arabic.classList.add('qb-seen');
+        section.classList.add('qb-section-visible');
+        return;
+    }
+
+    const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            arabic.classList.add('qb-write');
+            section.classList.add('qb-section-visible');
+            sessionStorage.setItem('qbSeen', '1');
+            obs.disconnect();
+        }
+    }, { threshold: 0.45 });
+    obs.observe(section);
+})();
+
+/* ── islamic divider draw-on-scroll ──────────────────────── */
+(function () {
+    const dividers = document.querySelectorAll('.islamic-divider');
+    if (!dividers.length) return;
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('is-visible');
+                obs.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.6 });
+    dividers.forEach(d => obs.observe(d));
+})();
+
+/* ── hero session bubble 3D tilt ─────────────────────────── */
+(function () {
+    const wrap = document.getElementById('heroSession');
+    if (!wrap) return;
+    const bubble = wrap.querySelector('.hsc-bubble');
+    if (!bubble) return;
+    const baseTilt = -1.2; // matches CSS rotate at rest
+    let raf = 0;
+
+    wrap.addEventListener('mousemove', (e) => {
+        const r = wrap.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width  - 0.5;
+        const y = (e.clientY - r.top)  / r.height - 0.5;
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+            bubble.style.transform =
+                `rotate(${baseTilt + x * 1.5}deg) ` +
+                `rotateX(${-y * 7}deg) rotateY(${x * 9}deg) ` +
+                `translateY(-3px)`;
+        });
+    });
+
+    wrap.addEventListener('mouseleave', () => {
+        cancelAnimationFrame(raf);
+        bubble.style.transform = '';
+    });
+})();
+
 /* ── floating enrol button ───────────────────────────────── */
 (function () {
     const btn = document.getElementById('floatEnrol');
@@ -442,14 +530,104 @@ document.addEventListener('keydown', e => {
     }, 4000);
 })();
 
-/* ── program filter ──────────────────────────────────────── */
+/* ── program filter (FLIP animation) ────────────────────── */
 function filterPrograms(filter, btn) {
+    const grid = document.querySelector('.prog-grid');
+    if (grid.dataset.pfAnimating) return;
+
     document.querySelectorAll('.pf-tab').forEach(t => t.classList.remove('pf-active'));
     btn.classList.add('pf-active');
-    document.querySelectorAll('.prog-card').forEach(card => {
+
+    const cards = [...document.querySelectorAll('.prog-card')];
+    const entering = [], leaving = [], staying = [];
+    cards.forEach(card => {
         const match = filter === 'all' || card.dataset.filter === filter;
-        card.classList.toggle('pf-hidden', !match);
+        const hidden = card.classList.contains('pf-hidden');
+        if (match && hidden)   entering.push(card);
+        else if (!match && !hidden) leaving.push(card);
+        else if (match && !hidden)  staying.push(card);
     });
+    if (!entering.length && !leaving.length) return;
+
+    // FIRST: snapshot positions of everything currently visible
+    const firstPos = new Map();
+    [...staying, ...leaving].forEach(c => firstPos.set(c, c.getBoundingClientRect()));
+    const gridRect = grid.getBoundingClientRect();
+
+    // Pull leaving cards out of flow via absolute positioning (keeps grid stable for LAST measure)
+    leaving.forEach(card => {
+        const r = firstPos.get(card);
+        card.style.cssText = `
+            position:absolute;
+            left:${r.left - gridRect.left}px;
+            top:${r.top - gridRect.top}px;
+            width:${r.width}px;
+            height:${r.height}px;
+            margin:0;
+            transition:none;
+            pointer-events:none;
+        `;
+    });
+
+    // Show entering cards but keep them invisible so LAST positions are correct
+    entering.forEach(card => {
+        card.classList.remove('pf-hidden');
+        card.style.cssText = 'opacity:0;transform:scale(0.88) translateY(12px);transition:none;';
+    });
+
+    void grid.offsetHeight; // force reflow — this is the LAST state for staying cards
+
+    // LAST: capture new positions for staying cards
+    const lastPos = new Map();
+    staying.forEach(c => lastPos.set(c, c.getBoundingClientRect()));
+
+    // INVERT: push staying cards back to where they were
+    staying.forEach(card => {
+        const first = firstPos.get(card);
+        const last  = lastPos.get(card);
+        const dx = first.left - last.left;
+        const dy = first.top  - last.top;
+        card.style.cssText = `transition:none;transform:translate(${dx}px,${dy}px);`;
+    });
+
+    void grid.offsetHeight; // commit the inverted positions
+
+    const DUR  = 380;
+    const EASE = 'cubic-bezier(0.25,0.46,0.45,0.94)';
+
+    // PLAY: staying cards animate to their final positions
+    staying.forEach(card => {
+        card.style.transition = `transform ${DUR}ms ${EASE}`;
+        card.style.transform = '';
+    });
+
+    // PLAY: entering cards fade + slide in (slight delay feels natural)
+    entering.forEach(card => {
+        card.style.transition = `opacity ${DUR}ms ease,transform ${DUR}ms ${EASE}`;
+        card.style.transitionDelay = '80ms';
+        card.style.opacity = '';
+        card.style.transform = '';
+    });
+
+    // PLAY: leaving cards fade + scale out
+    leaving.forEach(card => {
+        card.style.transition = 'opacity 240ms ease,transform 240ms ease';
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.88)';
+    });
+
+    // Cleanup
+    grid.dataset.pfAnimating = '1';
+    setTimeout(() => {
+        leaving.forEach(card => {
+            card.classList.add('pf-hidden');
+            card.style.cssText = '';
+        });
+        [...staying, ...entering].forEach(card => {
+            card.style.cssText = '';
+        });
+        delete grid.dataset.pfAnimating;
+    }, DUR + 60);
 }
 
 /* ── FAQ accordion ───────────────────────────────────────── */
@@ -510,23 +688,27 @@ function sendMsg(btn) {
             from_name: 'GESMA Website'
         })
     })
-    .then(r => r.json())
-    .then(data => {
+    .then(r => r.json().then(data => ({ status: r.status, data })))
+    .then(({ status, data }) => {
+        console.log('[GESMA form] Web3Forms response:', status, data);
         if (data.success) {
+            starBurst(btn);
             btn.innerHTML = '<i class="fas fa-check"></i> &nbsp;Message Sent — JazakAllah Khayr!';
             btn.style.background = 'linear-gradient(135deg,#1b5e35,#2d9e5f)';
             ['fName','fLName','fEmail','fMsg'].forEach(id => { document.getElementById(id).value = ''; });
             document.querySelector('#contact input[type="tel"]') && (document.querySelector('#contact input[type="tel"]').value = '');
             setTimeout(() => { btn.innerHTML = '<i class="fas fa-paper-plane"></i> &nbsp;Send Message'; btn.style.background = ''; btn.disabled = false; }, 4000);
         } else {
-            throw new Error('Submission failed');
+            throw new Error(data.message || `Submission rejected (HTTP ${status})`);
         }
     })
-    .catch(() => {
-        btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> &nbsp;Something went wrong. Please try again.';
+    .catch(err => {
+        console.error('[GESMA form] submission failed:', err);
+        const msg = (err && err.message) ? err.message : 'Something went wrong. Please try again.';
+        btn.innerHTML = `<i class="fas fa-exclamation-circle"></i> &nbsp;${msg}`;
         btn.style.background = 'linear-gradient(135deg,#8b0000,#c0392b)';
         btn.disabled = false;
-        setTimeout(() => { btn.innerHTML = '<i class="fas fa-paper-plane"></i> &nbsp;Send Message'; btn.style.background = ''; }, 4000);
+        setTimeout(() => { btn.innerHTML = '<i class="fas fa-paper-plane"></i> &nbsp;Send Message'; btn.style.background = ''; }, 6000);
     });
 }
 function subscribeNl() {
@@ -538,3 +720,182 @@ function subscribeNl() {
     i.value = '';
     setTimeout(() => { btn.textContent = 'Subscribe'; btn.style.background = ''; }, 3500);
 }
+
+/* ═══════════════════════════════════════════════════════════
+   FEATURES #4–12
+═══════════════════════════════════════════════════════════ */
+
+/* ── #4 Section title letter reveal ─────────────────────── */
+(function () {
+    function splitTitle(el) {
+        const nodes = [...el.childNodes];
+        el.innerHTML = '';
+        let idx = 0;
+        function wrapLetters(parent, text) {
+            [...text].forEach(ch => {
+                const s = document.createElement('span');
+                s.className = 'sl-letter';
+                s.textContent = ch === ' ' ? ' ' : ch;
+                s.style.transitionDelay = (300 + idx * 32) + 'ms';
+                idx++;
+                parent.appendChild(s);
+            });
+        }
+        nodes.forEach(node => {
+            if (node.nodeType === Node.TEXT_NODE) {
+                wrapLetters(el, node.textContent);
+            } else {
+                const clone = node.cloneNode(false);
+                el.appendChild(clone);
+                [...node.childNodes].forEach(child => {
+                    if (child.nodeType === Node.TEXT_NODE) wrapLetters(clone, child.textContent);
+                    else clone.appendChild(child.cloneNode(true));
+                });
+            }
+        });
+    }
+
+    const titles = document.querySelectorAll('.section-title');
+    titles.forEach(splitTitle);
+
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('sl-visible');
+                obs.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    titles.forEach(t => obs.observe(t));
+})();
+
+/* ── #5 Hero parallax depth ─────────────────────────────── */
+(function () {
+    const hero    = document.querySelector('.hero');
+    if (!hero) return;
+    const decoSvg = hero.querySelector('.hero-deco-svg');
+    const title   = hero.querySelector('.hero-title');
+    const sub     = hero.querySelector('.hero-sub');
+    const heroH   = () => hero.offsetHeight;
+    let   ticking = false;
+
+    window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            const y = Math.min(window.scrollY, heroH());
+            if (decoSvg) decoSvg.style.transform = `translateY(${y * 0.18}px)`;
+            if (title)   title.style.transform   = `translateY(${y * 0.05}px)`;
+            if (sub)     sub.style.transform     = `translateY(${y * 0.08}px)`;
+            ticking = false;
+        });
+    }, { passive: true });
+})();
+
+/* ── #6 Animated stat counters ──────────────────────────── */
+(function () {
+    const items = document.querySelectorAll('.stat-num[data-target]');
+    if (!items.length) return;
+
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el     = entry.target;
+            const target = +el.dataset.target;
+            const suffix = el.dataset.suffix || '';
+            obs.unobserve(el);
+            const start  = performance.now();
+            const dur    = 1600;
+            function step(now) {
+                const pct = Math.min((now - start) / dur, 1);
+                const val = Math.round(pct * pct * target); // ease-in curve
+                el.textContent = val + suffix;
+                if (pct < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        });
+    }, { threshold: 0.5 });
+    items.forEach(el => obs.observe(el));
+})();
+
+/* ── #7 Magnetic CTAs ────────────────────────────────────── */
+(function () {
+    document.querySelectorAll('[data-magnetic]').forEach(el => {
+        el.addEventListener('mousemove', e => {
+            const r  = el.getBoundingClientRect();
+            const x  = (e.clientX - r.left - r.width  / 2) * 0.28;
+            const y  = (e.clientY - r.top  - r.height / 2) * 0.38;
+            el.style.transform = `translate(${x}px,${y}px)`;
+        });
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = '';
+        });
+    });
+})();
+
+/* ── #8 Floating labels ─────────────────────────────────── */
+(function () {
+    document.querySelectorAll('.contact-form-wrap .fg').forEach(fg => {
+        const field = fg.querySelector('input,textarea,select');
+        if (!field) return;
+        const update = () => {
+            const active = document.activeElement === field || field.value.trim() !== '';
+            fg.classList.toggle('fl-active', active);
+        };
+        field.addEventListener('focus',  update);
+        field.addEventListener('blur',   update);
+        field.addEventListener('input',  update);
+        field.addEventListener('change', update);
+        update();
+    });
+})();
+
+/* ── #9 Star burst on form success ──────────────────────── */
+function starBurst(btn) {
+    const r  = btn.getBoundingClientRect();
+    const cx = r.left + r.width  / 2;
+    const cy = r.top  + r.height / 2;
+    const N  = 7;
+    for (let i = 0; i < N; i++) {
+        const star = document.createElement('div');
+        star.className = 'star-particle';
+        star.textContent = '✦';
+        const angle = (i / N) * Math.PI * 2;
+        const dist  = 45 + Math.random() * 35;
+        star.style.left = cx + 'px';
+        star.style.top  = cy + 'px';
+        star.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
+        star.style.setProperty('--ty', Math.sin(angle) * dist + 'px');
+        star.style.animationDelay = (i * 40) + 'ms';
+        document.body.appendChild(star);
+        star.addEventListener('animationend', () => star.remove());
+    }
+}
+
+/* ── #10 Cursor-aware chat bubbles ──────────────────────── */
+(function () {
+    const bubbles = [...document.querySelectorAll('.chat-bubble')];
+    if (!bubbles.length) return;
+
+    document.addEventListener('mousemove', e => {
+        bubbles.forEach(b => {
+            const r    = b.getBoundingClientRect();
+            const bx   = r.left + r.width  / 2;
+            const by   = r.top  + r.height / 2;
+            const dx   = e.clientX - bx;
+            const dy   = e.clientY - by;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 220) {
+                const force = (220 - dist) / 220;
+                b.style.translate = `${-dx * force * 0.07}px ${-dy * force * 0.07}px`;
+            } else {
+                b.style.translate = '';
+            }
+        });
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', () => {
+        bubbles.forEach(b => { b.style.translate = ''; });
+    });
+})();
+

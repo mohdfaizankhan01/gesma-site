@@ -226,7 +226,6 @@
       <!-- Conversation bubbles -->
       <div class="chat-bubble cb1">How do I stay strong<br>in my faith?</div>
       <div class="chat-bubble cb2">How do I build a real<br>connection with Allah?</div>
-      <div class="chat-bubble cb3">How do I live Islam<br>in today's world?</div>
 
     </div>
     <div class="hero-inner">
@@ -240,6 +239,29 @@
           onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
           <i class="fas fa-envelope"></i> Get In Touch
         </button>
+      </div>
+    </div>
+
+    <div class="hero-session-wrap" id="heroSession">
+      <div class="hsc-trend">
+        <span class="hsc-dot"></span> TRENDING
+      </div>
+      <div class="hsc-bubble">
+        <div class="hsc-meta">
+          <i class="fas fa-comment-dots"></i>
+          <span>Upcoming Youth Session</span>
+        </div>
+        <h3 class="hsc-topic">
+          <span class="hsc-quote">&ldquo;</span>Do you need Islam to be an <span class="hsc-hl">ethical</span> person?<span class="hsc-quote">&rdquo;</span>
+        </h3>
+        <div class="hsc-typing"><span></span><span></span><span></span></div>
+        <a class="hsc-cta"
+           href="https://wa.me/41798369237?text=Assalamu%20Alaikum!%20I%27d%20love%20to%20join%20the%20upcoming%20youth%20session%20on%20%22Do%20you%20need%20Islam%20to%20be%20an%20ethical%20person%3F%22"
+           target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i>
+          <span>Join the conversation</span>
+          <i class="fas fa-arrow-right hsc-arrow"></i>
+        </a>
       </div>
     </div>
     <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" role="button" aria-label="Scroll to next section">
@@ -259,8 +281,8 @@
           <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:16px">Geneva is one of the most international cities in the world — yet for many English-speaking Muslim families, finding a community that truly feels like home can be a real challenge. <strong style="color:var(--navy)">GESMA was built to change that.</strong></p>
           <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:16px">We are a community association dedicated to nurturing the faith, identity, and confidence of English-speaking Muslims across Geneva and its surroundings. From structured Islamic education for children to open discussions for teenagers and parents — everything we do is designed to help families <em>thrive</em>, not just survive, as Muslims in the West.</p>
           <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:32px">We believe that being a good Muslim and a proud member of Swiss society are not in conflict — they go hand in hand. Our community is welcoming, multicultural, and built on values of respect, service, and genuine belonging.</p>
-          <a href="#contact"
-            style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:white;padding:13px 28px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:600;transition:all var(--transition)"
+          <a href="#contact" data-magnetic
+            style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:white;padding:13px 28px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:600;transition:transform 0.3s ease,background var(--transition)"
             onmouseover="this.style.background='var(--blue)'" onmouseout="this.style.background='var(--navy)'">
             <i class="fas fa-users"></i> Join Our Community
           </a>
@@ -395,6 +417,56 @@
       </div>
     </div>
   </section>
+
+  <!-- COMMUNITY GALLERY -->
+  <section class="community-gallery">
+    <div class="container">
+      <div class="tc fade-up">
+        <span class="tag tag-blue">Our Community</span>
+        <h2 class="section-title">Community <em>Moments</em></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="gallery-grid fade-up">
+        <div class="gallery-item">
+          <div class="gallery-img-wrap">
+            <img src="assets/PHOTO-2026-01-29-12-33-03.jpg" alt="GESMA certificate distribution" loading="lazy" style="object-position: top center;">
+            <div class="gallery-overlay"><p>Celebrating every milestone — honouring our students</p></div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-img-wrap">
+            <img src="assets/PHOTO-2026-05-15-23-48-21.jpg" alt="GESMA community gathering" loading="lazy">
+            <div class="gallery-overlay"><p>Where community begins — after class, together</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QURAN VERSE BANNER -->
+  <section class="quran-banner" id="qb-section">
+    <div class="container">
+      <div class="qb-inner">
+        <span class="qb-ornament" aria-hidden="true">✦</span>
+        <div class="qb-content">
+          <p class="qb-arabic" id="qb-arabic">وَقُل رَّبِّ زِدْنِي عِلْمًا</p>
+          <p class="qb-translation qb-fade">"And say: My Lord, increase me in knowledge"</p>
+          <p class="qb-ref qb-fade">Surah Ta-Ha &middot; 20:114</p>
+        </div>
+        <span class="qb-ornament" aria-hidden="true">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="islamic-divider" aria-hidden="true">
+    <svg class="idiv-svg" viewBox="0 0 300 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line class="idiv-el idiv-l1" x1="2" y1="16" x2="121" y2="16" stroke-linecap="round" pathLength="100"/>
+      <circle class="idiv-el idiv-d1" cx="129" cy="16" r="3" pathLength="100"/>
+      <path class="idiv-el idiv-star" d="M150 4 L163 16 L150 28 L137 16 Z" pathLength="100"/>
+      <circle class="idiv-el idiv-d2" cx="171" cy="16" r="3" pathLength="100"/>
+      <line class="idiv-el idiv-l2" x1="179" y1="16" x2="298" y2="16" stroke-linecap="round" pathLength="100"/>
+    </svg>
+  </div>
 
   <!-- PROGRAMS -->
   <section class="programs-section" id="programs">
@@ -620,6 +692,16 @@
     </div>
   </section>
 
+  <div class="islamic-divider" aria-hidden="true">
+    <svg class="idiv-svg" viewBox="0 0 300 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line class="idiv-el idiv-l1" x1="2" y1="16" x2="121" y2="16" stroke-linecap="round" pathLength="100"/>
+      <circle class="idiv-el idiv-d1" cx="129" cy="16" r="3" pathLength="100"/>
+      <path class="idiv-el idiv-star" d="M150 4 L163 16 L150 28 L137 16 Z" pathLength="100"/>
+      <circle class="idiv-el idiv-d2" cx="171" cy="16" r="3" pathLength="100"/>
+      <line class="idiv-el idiv-l2" x1="179" y1="16" x2="298" y2="16" stroke-linecap="round" pathLength="100"/>
+    </svg>
+  </div>
+
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
     <div class="container">
@@ -652,7 +734,7 @@
             </select>
           </div>
           <div class="fg" id="fg-msg"><label>Message</label><textarea id="fMsg" placeholder="Tell us how we can help…"></textarea><span class="fg-msg"></span></div>
-          <button class="btn-send" onclick="sendMsg(this)">
+          <button class="btn-send" data-magnetic onclick="sendMsg(this)">
             <i class="fas fa-paper-plane"></i> Send Message
           </button>
         </div>
@@ -783,11 +865,12 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- Floating Enrol Button -->
-  <button class="float-enrol" id="floatEnrol" onclick="presetContactSubject('Enrol my child in a program')">
-    <i class="fas fa-book-open"></i>
-    <span>Enrol Now</span>
-  </button>
+  <!-- Floating WhatsApp Button -->
+  <a class="float-enrol" id="floatEnrol"
+     href="https://wa.me/41798369237?text=Assalamu%20Alaikum!%20I%27d%20like%20to%20learn%20more%20about%20GESMA%20programs."
+     target="_blank" rel="noopener" aria-label="Chat with GESMA on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <script src="main.js"></script>
 </body>
