@@ -475,12 +475,59 @@ document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el => obs.o
 
 /* ── form handlers ───────────────────────────────────────── */
 function sendMsg(btn) {
-    btn.innerHTML = '<i class="fas fa-check"></i> &nbsp;Message Sent — JazakAllah Khayr!';
-    btn.style.background = 'linear-gradient(135deg,#1b5e35,#2d9e5f)';
-    setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-paper-plane"></i> &nbsp;Send Message';
-        btn.style.background = '';
-    }, 3500);
+    const firstName = document.getElementById('fName').value.trim();
+    const lastName  = document.getElementById('fLName').value.trim();
+    const email     = document.getElementById('fEmail').value.trim();
+    const message   = document.getElementById('fMsg').value.trim();
+    const phone     = document.querySelector('#contact input[type="tel"]')?.value.trim() || '';
+    const subject   = document.querySelector('#contact select')?.value || 'General Enquiry';
+
+    if (!firstName || !lastName || !email || !message) {
+        [['fg-fname','fName'],['fg-lname','fLName'],['fg-email','fEmail'],['fg-msg','fMsg']].forEach(([fgId, inputId]) => {
+            const fg = document.getElementById(fgId);
+            const input = document.getElementById(inputId);
+            if (fg && input && !input.value.trim()) {
+                fg.classList.add('fg-invalid');
+                fg.querySelector('.fg-msg').textContent = 'This field is required.';
+            }
+        });
+        return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> &nbsp;Sending…';
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+            access_key: '0155c493-0dad-42b4-91e6-c4725fe132eb',
+            name: `${firstName} ${lastName}`,
+            email,
+            phone,
+            subject: `GESMA Enquiry: ${subject}`,
+            message,
+            from_name: 'GESMA Website'
+        })
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            btn.innerHTML = '<i class="fas fa-check"></i> &nbsp;Message Sent — JazakAllah Khayr!';
+            btn.style.background = 'linear-gradient(135deg,#1b5e35,#2d9e5f)';
+            ['fName','fLName','fEmail','fMsg'].forEach(id => { document.getElementById(id).value = ''; });
+            document.querySelector('#contact input[type="tel"]') && (document.querySelector('#contact input[type="tel"]').value = '');
+            setTimeout(() => { btn.innerHTML = '<i class="fas fa-paper-plane"></i> &nbsp;Send Message'; btn.style.background = ''; btn.disabled = false; }, 4000);
+        } else {
+            throw new Error('Submission failed');
+        }
+    })
+    .catch(() => {
+        btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> &nbsp;Something went wrong. Please try again.';
+        btn.style.background = 'linear-gradient(135deg,#8b0000,#c0392b)';
+        btn.disabled = false;
+        setTimeout(() => { btn.innerHTML = '<i class="fas fa-paper-plane"></i> &nbsp;Send Message'; btn.style.background = ''; }, 4000);
+    });
 }
 function subscribeNl() {
     const i = document.getElementById('nlEmail');
