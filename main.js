@@ -1,70 +1,52 @@
 /* ── data ─────────────────────────────────────────────────── */
 
 const programs = {
-    beginners: {
-        badge: 'Ages 6–7 · Book 1', icon: 'fas fa-child',
-        title: 'Islamic Studies – Beginners',
-        subtitle: 'An engaging introduction to Islam for young children aged 6–9',
+    foundation: {
+        badge: 'Ages 6–9 · Mixed Group', icon: 'fas fa-child',
+        title: 'Foundation Islamic Studies',
+        subtitle: 'A warm and engaging introduction to Islam for children aged 6–9',
         info: [
-            { label: 'Age Group', val: '6–7 years' },
+            { label: 'Age Group', val: '6–9 years (Mixed)' },
             { label: 'Schedule', val: 'Every Friday' },
-            { label: 'Time', val: '5:30 – 7:30 PM' },
+            { label: 'Time', val: 'Evening (2 hrs)' },
             { label: 'Language', val: 'English' },
-            { label: 'Level', val: 'Beginners (Book 1)' },
+            { label: 'Curriculum', val: 'An-Nasihah' },
             { label: 'Fee', val: 'Contact us' }
         ],
-        what: ['Introduction to the five pillars of Islam', 'Arabic letters and basic Islamic vocabulary', 'Stories of the Prophets (peace be upon them)', 'Islamic manners, adab and daily du\'as', 'Aqeedah foundations taught through stories and activities'],
-        outcomes: ['Recognise Arabic letters and basic Islamic terms', 'Memorise essential du\'as', 'Understand the five pillars', 'Develop Islamic character and good manners', 'Build a love for Islam from a young age']
+        what: ['Based on the An-Nasihah Islamic Curriculum', 'Islamic beliefs, worship and stories of the Prophets', 'Character and manners through stories and activities', 'Interactive and age-appropriate learning', 'A warm, welcoming English-speaking environment']
     },
-    elementary: {
-        badge: 'Ages 8–9 · Book 2', icon: 'fas fa-book-open',
-        title: 'Islamic Studies – Elementary',
-        subtitle: 'Building upon foundational knowledge with deeper Islamic and Fiqh studies',
-        info: [
-            { label: 'Age Group', val: '8–9 years' },
-            { label: 'Schedule', val: 'Every Friday' },
-            { label: 'Time', val: '5:30 – 7:30 PM' },
-            { label: 'Language', val: 'English' },
-            { label: 'Level', val: 'Elementary (Book 2)' },
-            { label: 'Prerequisite', val: 'Book 1 or equivalent' }
-        ],
-        what: ['Deeper study of Islamic worship and prayer', 'Prayer — method, significance and khushoo\'', 'Seerah of the Prophet Muhammad ﷺ', 'Introduction to Islamic jurisprudence (fiqh)', 'Character building and Islamic ethics'],
-        outcomes: ['Perform salah correctly with understanding', 'Know the life story of the Prophet ﷺ', 'Understand basic halal/haram concepts', 'Grow in Islamic character and responsibility', 'Strengthen daily acts of worship and devotion']
-    },
-    boysgroup: {
-        badge: 'Ages 10–14 · Boys', icon: 'fas fa-male',
-        title: 'Islamic Studies – Boys Group',
-        subtitle: 'Intermediate studies designed for boys aged 10–14 in a supportive brotherhood setting',
+    boys: {
+        badge: 'Ages 10–14 · Boys Group', icon: 'fas fa-male',
+        title: 'Boys Islamic Studies',
+        subtitle: 'Structured Islamic learning for boys aged 10–14 in a supportive setting',
         info: [
             { label: 'Age Group', val: '10–14 years (Boys)' },
             { label: 'Schedule', val: 'Every Friday' },
-            { label: 'Time', val: '5:30 – 7:30 PM' },
+            { label: 'Time', val: 'Evening (2 hrs)' },
             { label: 'Language', val: 'English' },
-            { label: 'Level', val: 'Intermediate' },
+            { label: 'Curriculum', val: 'An-Nasihah' },
             { label: 'Setting', val: 'Boys only' }
         ],
-        what: ['Islamic studies circles and group discussion', 'Islamic history and civilisation', 'Ethics, character, and personal responsibility', 'Contemporary issues for Muslim youth', 'Brotherhood, mentoring and community service'],
-        outcomes: ['Deepen understanding of Islamic studies', 'Understand Islamic history and its relevance today', 'Navigate adolescence with Islamic guidance', 'Develop leadership and service mindset', 'Build strong Muslim brotherhood']
+        what: ['Continuing the An-Nasihah learning pathway', 'Islamic beliefs, worship, Seerah and history', 'Character development and daily conduct', 'A supportive boys-only learning environment', 'Opportunities for discussion, reflection and personal growth']
     },
-    girlsgroup: {
-        badge: 'Ages 10–14 · Girls', icon: 'fas fa-female',
-        title: 'Islamic Studies – Girls Group',
-        subtitle: 'Empowering girls aged 10–14 with Islamic knowledge, confidence and sisterhood',
+    girls: {
+        badge: 'Ages 10–14 · Girls Group', icon: 'fas fa-female',
+        title: 'Girls Islamic Studies',
+        subtitle: 'Structured Islamic learning for girls aged 10–14 in a supportive setting',
         info: [
             { label: 'Age Group', val: '10–14 years (Girls)' },
             { label: 'Schedule', val: 'Every Friday' },
-            { label: 'Time', val: '5:30 – 7:30 PM' },
+            { label: 'Time', val: 'Evening (2 hrs)' },
             { label: 'Language', val: 'English' },
-            { label: 'Level', val: 'Intermediate' },
+            { label: 'Curriculum', val: 'An-Nasihah' },
             { label: 'Setting', val: 'Girls only' }
         ],
-        what: ['Islamic vocabulary and foundational knowledge', 'Role models from Islamic history (Khadijah, Aisha RA)', 'Islamic etiquette, modesty and sisterhood', 'Faith, identity and confidence in the West', 'Creative Islamic arts, calligraphy and activities'],
-        outcomes: ['Strengthen Islamic knowledge and understanding', 'Discover inspiring Muslim women in history', 'Build confidence as a young Muslim woman', 'Develop a positive Islamic identity', 'Form strong bonds with the Muslim sisterhood']
+        what: ['Continuing the An-Nasihah learning pathway', 'Islamic beliefs, worship, Seerah and history', 'Character development and daily conduct', 'A supportive girls-only learning environment', 'Opportunities for discussion, reflection and personal growth']
     },
-    youthboys: {
-        badge: 'Ages 15+ · Discussion Series', icon: 'fas fa-comments',
-        title: 'Youth Series – Boys',
-        subtitle: 'Interactive and guided discussions for Muslim teenage boys exploring questions about faith, life, and identity in today\'s world',
+    youth: {
+        badge: 'Ages 15+ · Guided Discussions', icon: 'fas fa-comments',
+        title: 'Youth Discussion Series',
+        subtitle: 'Thoughtful conversations for Muslim teenagers and young adults exploring faith, identity, purpose, and the challenges of contemporary life',
         info: [
             { label: 'Age Group', val: '15+ years' },
             { label: 'Location', val: 'Coming Soon' },
@@ -74,76 +56,39 @@ const programs = {
             { label: 'Extras', val: 'Light refreshments provided' }
         ],
         what: [
-            'Faith and belief — Why do we believe in Islam? Core articles of faith and how to respond to modern doubts',
-            'Life and struggles — Why does Allah test us? Dealing with hardship, anxiety, and finding purpose',
-            'Identity and character — What does it mean to be a Muslim today? Building character and self-discipline',
-            'Contemporary challenges — Social media, materialism, and navigating Islam in a non-Muslim society',
-            'Essentials and devotional practice — Strengthening daily worship and developing habits of a practicing Muslim'
-        ],
-        outcomes: [
-            'Understand Islam thoughtfully and strengthen core beliefs and practices',
-            'Build clarity about identity and develop confidence living as Muslims',
-            'Engage positively and constructively with the world around them',
-            'Ask honest questions and express ideas confidently in English',
-            'Connect with a supportive network of young Muslim brothers in Geneva'
+            'Guided discussions and reflection',
+            'Drawing on Yaqeen Institute and Al-Nasihah\'s Living Islam resources',
+            'Real-life questions explored through an Islamic perspective',
+            'Faith, identity, purpose, relationships and contemporary life',
+            'Small-group and interactive format with light refreshments'
         ]
     },
-    youthgirls: {
-        badge: 'Ages 15+ · Discussion Series', icon: 'fas fa-comments',
-        title: 'Youth Series – Girls',
-        subtitle: 'Interactive and guided discussions for Muslim teenage girls exploring questions about faith, life, and identity in today\'s world',
-        info: [
-            { label: 'Age Group', val: '15+ years' },
-            { label: 'Location', val: 'Coming Soon' },
-            { label: 'Schedule', val: 'Twice monthly' },
-            { label: 'Format', val: 'Small group, guided discussion' },
-            { label: 'Language', val: 'English' },
-            { label: 'Extras', val: 'Light refreshments provided' }
-        ],
-        what: [
-            'Faith and belief — Why do we believe in Islam? Core articles of faith and how to respond to modern doubts',
-            'Life and struggles — Why does Allah test us? Dealing with hardship, anxiety, and finding purpose',
-            'Identity and character — What does it mean to be a Muslim today? Building confidence and character',
-            'Contemporary challenges — Social media, materialism, and navigating Islam in a non-Muslim society',
-            'Essentials and devotional practice — Strengthening daily worship and developing habits of a practicing Muslim'
-        ],
-        outcomes: [
-            'Understand Islam thoughtfully and strengthen core beliefs and practices',
-            'Build clarity about identity and develop confidence living as Muslims',
-            'Engage positively and constructively with the world around them',
-            'Ask honest questions and express ideas confidently in English',
-            'Connect with a supportive network of young Muslim sisters in Geneva'
-        ]
-    },
-    parental: {
-        badge: 'For Parents · All Ages', icon: 'fas fa-users',
-        title: 'Parental Classes',
-        subtitle: 'Supporting Muslim parents to raise children with strong values and Islamic identity',
+    parents: {
+        badge: 'For Parents & Guardians', icon: 'fas fa-users',
+        title: 'Parents & Family Learning',
+        subtitle: 'Supporting parents in nurturing faith, character, and a strong Muslim identity within the family',
         info: [
             { label: 'Target', val: 'Parents & Guardians' },
-            { label: 'Status', val: 'Launching Soon 2025' },
+            { label: 'Status', val: 'Coming Soon' },
             { label: 'Language', val: 'English' },
             { label: 'Format', val: 'Workshops & Q&A' },
-            { label: 'Commitment', val: 'Monthly sessions' },
+            { label: 'Focus', val: 'Family learning' },
             { label: 'Cost', val: 'Register interest' }
         ],
-        what: ['Raising children with Islamic values in the West', 'Practical parenting tools drawn from Sunnah', 'Supporting your child\'s Islamic identity', 'Q&A sessions with qualified scholars', 'Peer support network for Muslim parents in Geneva'],
-        outcomes: ['Practical strategies for Islamic parenting', 'Stronger connection with your child\'s faith journey', 'Access to a supportive parent community', 'Scholar guidance on modern parenting challenges', 'Confidence in raising Muslims in a secular society']
+        what: ['Parenting in a multicultural environment', 'Supporting children\'s faith and identity', 'Family learning and community connection', 'Workshops, discussions and Q&A sessions']
     }
 };
 
 /* ── modal ───────────────────────────────────────────────── */
 let currentModalId = null;
-const programOrder = ['beginners', 'elementary', 'boysgroup', 'girlsgroup', 'youthboys', 'youthgirls', 'parental'];
+const programOrder = ['foundation', 'boys', 'girls', 'youth', 'parents'];
 
 const subjectMap = {
-    beginners:  'Enrol my child in a program',
-    elementary: 'Enrol my child in a program',
-    boysgroup:  'Enrol my child in a program',
-    girlsgroup: 'Enrol my child in a program',
-    youthboys:  'Youth Series information',
-    youthgirls: 'Youth Series information',
-    parental:   'Parental Classes interest'
+    foundation: 'Enrol my child in a program',
+    boys:       'Enrol my child in a program',
+    girls:      'Enrol my child in a program',
+    youth:      'Youth Discussion Series information',
+    parents:    'Parents & Family Learning interest'
 };
 
 function openModal(id) {
@@ -157,12 +102,10 @@ function openModal(id) {
 
     const infoGrid = p.info.map(i => `<div class="mod-info-item"><label>${i.label}</label><p>${i.val}</p></div>`).join('');
     const whatList = p.what.map(w => `<li>${w}</li>`).join('');
-    const outList = p.outcomes.map(o => `<li>${o}</li>`).join('');
 
     document.getElementById('modalBody').innerHTML = `
     <div class="mod-section"><h4>Program Information</h4><div class="mod-info-grid">${infoGrid}</div></div>
     <div class="mod-section"><h4>What You Will Learn</h4><ul>${whatList}</ul></div>
-    <div class="mod-section"><h4>Learning Outcomes</h4><ul>${outList}</ul></div>
     <button class="btn-enroll-full" onclick="enquireAboutProgram('${id}')">
       <i class="fas fa-paper-plane"></i> &nbsp;Enquire About This Program
     </button>
@@ -660,6 +603,14 @@ function sendMsg(btn) {
     const phone     = document.querySelector('#contact input[type="tel"]')?.value.trim() || '';
     const subject   = document.querySelector('#contact select')?.value || 'General Enquiry';
 
+    // Honeypot: real users never fill this hidden field. If filled, it's a bot —
+    // silently show success without sending, so the bot doesn't retry.
+    if (document.getElementById('fHoney')?.value) {
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-check"></i> &nbsp;Message Sent — JazakAllah Khayr!';
+        return;
+    }
+
     if (!firstName || !lastName || !email || !message) {
         [['fg-fname','fName'],['fg-lname','fLName'],['fg-email','fEmail'],['fg-msg','fMsg']].forEach(([fgId, inputId]) => {
             const fg = document.getElementById(fgId);
@@ -690,7 +641,6 @@ function sendMsg(btn) {
     })
     .then(r => r.json().then(data => ({ status: r.status, data })))
     .then(({ status, data }) => {
-        console.log('[GESMA form] Web3Forms response:', status, data);
         if (data.success) {
             starBurst(btn);
             btn.innerHTML = '<i class="fas fa-check"></i> &nbsp;Message Sent — JazakAllah Khayr!';
@@ -703,22 +653,14 @@ function sendMsg(btn) {
         }
     })
     .catch(err => {
-        console.error('[GESMA form] submission failed:', err);
         const msg = (err && err.message) ? err.message : 'Something went wrong. Please try again.';
-        btn.innerHTML = `<i class="fas fa-exclamation-circle"></i> &nbsp;${msg}`;
+        // Build via textContent so any API-returned text can never inject HTML.
+        btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> &nbsp;';
+        btn.appendChild(document.createTextNode(msg));
         btn.style.background = 'linear-gradient(135deg,#8b0000,#c0392b)';
         btn.disabled = false;
         setTimeout(() => { btn.innerHTML = '<i class="fas fa-paper-plane"></i> &nbsp;Send Message'; btn.style.background = ''; }, 6000);
     });
-}
-function subscribeNl() {
-    const i = document.getElementById('nlEmail');
-    if (!i.value) return;
-    const btn = i.nextElementSibling;
-    btn.textContent = 'Subscribed ✓';
-    btn.style.background = '#2d9e5f';
-    i.value = '';
-    setTimeout(() => { btn.textContent = 'Subscribe'; btn.style.background = ''; }, 3500);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -732,13 +674,26 @@ function subscribeNl() {
         el.innerHTML = '';
         let idx = 0;
         function wrapLetters(parent, text) {
-            [...text].forEach(ch => {
-                const s = document.createElement('span');
-                s.className = 'sl-letter';
-                s.textContent = ch === ' ' ? ' ' : ch;
-                s.style.transitionDelay = (300 + idx * 32) + 'ms';
-                idx++;
-                parent.appendChild(s);
+            // Group letters per word so lines only break at real spaces.
+            // Each .sl-letter is inline-block, which would otherwise allow a
+            // break between every character and split words mid-way.
+            text.split(/(\s+)/).forEach(part => {
+                if (!part) return;
+                if (/^\s+$/.test(part)) {
+                    parent.appendChild(document.createTextNode(part));
+                    return;
+                }
+                const word = document.createElement('span');
+                word.className = 'sl-word';
+                [...part].forEach(ch => {
+                    const s = document.createElement('span');
+                    s.className = 'sl-letter';
+                    s.textContent = ch;
+                    s.style.transitionDelay = (300 + idx * 32) + 'ms';
+                    idx++;
+                    word.appendChild(s);
+                });
+                parent.appendChild(word);
             });
         }
         nodes.forEach(node => {
@@ -809,7 +764,7 @@ function subscribeNl() {
             function step(now) {
                 const pct = Math.min((now - start) / dur, 1);
                 const val = Math.round(pct * pct * target); // ease-in curve
-                el.textContent = val + suffix;
+                el.textContent = val.toLocaleString('en-US') + suffix;
                 if (pct < 1) requestAnimationFrame(step);
             }
             requestAnimationFrame(step);

@@ -5,10 +5,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GESMA – Geneva English-Speaking Muslims Association</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta name="description" content="GESMA is an English-speaking Muslim community in Geneva offering structured Islamic education for children, guided youth discussions, and family activities — all in English." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/final-logo.png" />
+  <link rel="apple-touch-icon" href="assets/final-logo.png" />
+
+  <!-- Open Graph / link previews (WhatsApp, social) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GESMA" />
+  <meta property="og:title" content="GESMA – Geneva English-Speaking Muslims Association" />
+  <meta property="og:description" content="An English-speaking Muslim community in Geneva — Islamic education for children, guided youth discussions, and family activities, all in English." />
+  <meta property="og:image" content="https://gesma.ch/assets/final-logo.png" />
+  <meta property="og:url" content="https://gesma.ch/" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GESMA – Geneva English-Speaking Muslims Association" />
+  <meta name="twitter:description" content="An English-speaking Muslim community in Geneva — Islamic education, youth discussions, and family activities, all in English." />
+  <meta name="twitter:image" content="https://gesma.ch/assets/final-logo.png" />
+
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -224,16 +241,16 @@
       </svg>
 
       <!-- Conversation bubbles -->
-      <div class="chat-bubble cb1">How do I stay strong<br>in my faith?</div>
-      <div class="chat-bubble cb2">How do I build a real<br>connection with Allah?</div>
+      <div class="chat-bubble cb1">How do I stay true to my<br>faith in today's world?</div>
+      <div class="chat-bubble cb2">How do we build lasting<br>friendships through faith?</div>
 
     </div>
     <div class="hero-inner">
-      <h1 class="hero-title">Where Your Family<br>Finds Faith &amp; <em>Belonging</em></h1>
-      <p class="hero-sub">Geneva's only English-speaking Islamic community — where Muslim <span class="tw-wrap"><span class="tw-word"></span><span class="tw-cursor"></span></span> find faith, identity, and a true sense of belonging.</p>
+      <h1 class="hero-title">Helping Muslim Families Grow in<br>Faith, Learning &amp; <em>Community</em></h1>
+      <p class="hero-sub">An English-speaking Muslim community serving Geneva &amp; surrounding areas — supporting <span class="tw-wrap"><span class="tw-word"></span><span class="tw-cursor"></span></span> through Islamic education, meaningful discussions, and lasting friendships.</p>
       <div class="hero-btns">
         <button class="btn-hero-gold" onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">
-          <i class="fas fa-book-open"></i> Our Programs
+          <i class="fas fa-book-open"></i> Explore Our Programs
         </button>
         <button class="btn-hero-outline"
           onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
@@ -270,17 +287,26 @@
     </div>
   </header>
 
+  <!-- IDENTITY BAR -->
+  <div class="identity-bar" aria-label="What defines GESMA">
+    <div class="container">
+      <span>English-Speaking</span>
+      <span>Multicultural</span>
+      <span>Faith-Centred</span>
+      <span>Geneva &amp; Surrounding Areas</span>
+    </div>
+  </div>
+
   <!-- WHO WE ARE -->
   <section id="about">
     <div class="container">
       <div class="who-inner">
         <div class="fade-left">
-          <span class="tag tag-blue">Who We Are</span>
-          <h2 class="section-title">A Home for Muslims<br><em>in the Heart of Geneva</em></h2>
+          <h2 class="section-title">Why GESMA <em>Exists</em></h2>
           <div class="divider"></div>
-          <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:16px">Geneva is one of the most international cities in the world — yet for many English-speaking Muslim families, finding a community that truly feels like home can be a real challenge. <strong style="color:var(--navy)">GESMA was built to change that.</strong></p>
-          <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:16px">We are a community association dedicated to nurturing the faith, identity, and confidence of English-speaking Muslims across Geneva and its surroundings. From structured Islamic education for children to open discussions for teenagers and parents — everything we do is designed to help families <em>thrive</em>, not just survive, as Muslims in the West.</p>
-          <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:32px">We believe that being a good Muslim and a proud member of Swiss society are not in conflict — they go hand in hand. Our community is welcoming, multicultural, and built on values of respect, service, and genuine belonging.</p>
+          <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:16px">Geneva is one of the world's most international cities, home to families from many cultures, languages, and backgrounds. Yet for many English-speaking Muslim families, it can still be difficult to find Islamic learning and community activities that feel accessible, relevant, and welcoming. <strong style="color:var(--navy)">GESMA was created to help fill this gap.</strong></p>
+          <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:16px">We support Muslim children, youth, and families in Geneva and surrounding areas through structured Islamic education, guided discussions, family connection, and community activities — all in English.</p>
+          <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:32px">Our aim is to help young Muslims strengthen their relationship with Allah, grow in Islamic knowledge and character, feel confident in their Muslim identity, and contribute positively to the multicultural society around them.</p>
           <a href="#contact" data-magnetic
             style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:white;padding:13px 28px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:600;transition:transform 0.3s ease,background var(--transition)"
             onmouseover="this.style.background='var(--blue)'" onmouseout="this.style.background='var(--navy)'">
@@ -291,43 +317,160 @@
           <div class="faq-accordion">
             <div class="faq-item faq-open">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span><i class="fas fa-users faq-ico"></i> Who is GESMA for?</span>
+                <span><i class="fas fa-users faq-ico"></i> Who can join GESMA programmes?</span>
                 <i class="fas fa-chevron-down faq-arrow"></i>
               </button>
               <div class="faq-a">
-                <p>For any English-speaking Muslim family in or around Geneva. Whether you arrived last month or have lived here for years, GESMA is your community. Our programs serve children from age 6, teenagers, and parents — all taught in English, in a welcoming multicultural setting.</p>
+                <p>GESMA welcomes English-speaking Muslim children, teenagers, young adults, and families from Geneva and surrounding areas. Our community includes both international and locally based families from a wide range of cultural and professional backgrounds.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span><i class="fas fa-star faq-ico"></i> What makes GESMA different?</span>
+                <span><i class="fas fa-seedling faq-ico"></i> Do children need prior Islamic knowledge?</span>
                 <i class="fas fa-chevron-down faq-arrow"></i>
               </button>
               <div class="faq-a">
-                <p>Most Islamic education in Geneva is in French or Arabic — leaving English-speaking families with very few options. GESMA fills that gap with a structured, English-medium curriculum trusted by scholars across the UK and South Asia, in a warm environment that genuinely understands the international Muslim experience.</p>
+                <p>No. Our programmes are designed to accommodate children with different levels of knowledge and experience. We aim to support each child's learning journey in a positive and encouraging environment.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span><i class="fas fa-door-open faq-ico"></i> Do I need to be a member to join?</span>
+                <span><i class="fas fa-language faq-ico"></i> Are all programmes taught in English?</span>
                 <i class="fas fa-chevron-down faq-arrow"></i>
               </button>
               <div class="faq-a">
-                <p>Not at all. You're welcome to reach out, visit, and enrol your children without any formal membership. We believe the community should be open and accessible to everyone — just get in touch and we'll guide you through the next steps.</p>
+                <p>Yes. All classes, discussions, and learning activities are conducted in English, making them accessible to international and multicultural families.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span><i class="fas fa-map-marker-alt faq-ico"></i> Where and when are classes held?</span>
+                <span><i class="fas fa-user-friends faq-ico"></i> How are boys' and girls' classes organised?</span>
                 <i class="fas fa-chevron-down faq-arrow"></i>
               </button>
               <div class="faq-a">
-                <p>Classes run every <strong>Friday from 5:30 to 7:30 PM</strong>. Our venue details are coming soon — contact us directly and we'll share everything you need to find us and get started.</p>
+                <p>Children aged 6–9 attend mixed classes. From ages 10–14, boys and girls learn in separate groups to provide an age-appropriate learning environment during the teenage years. For the Youth Discussion Series (ages 15+), brothers and sisters participate in the same session while remaining seated in separate areas, using an interactive, discussion-based format.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span><i class="fas fa-book faq-ico"></i> What curriculum do you use?</span>
+                <i class="fas fa-chevron-down faq-arrow"></i>
+              </button>
+              <div class="faq-a">
+                <p>Our Islamic Studies programme follows the internationally recognised An-Nasihah Islamic Curriculum, combining Islamic beliefs, worship, Prophetic teachings, Seerah, Islamic history, character development, and daily conduct. The Youth Discussion Series draws on resources from Yaqeen Institute, Al-Nasihah's Living Islam series, and other carefully selected materials.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span><i class="fas fa-clock faq-ico"></i> When are sessions held?</span>
+                <i class="fas fa-chevron-down faq-arrow"></i>
+              </button>
+              <div class="faq-a">
+                <p>The Islamic Studies programme is held every <strong>Friday evening</strong>, for approximately two hours. As the start time can vary through the year, please contact us for the latest timing. The Youth Discussion Series is typically held twice a month. Please contact us for the latest schedule, venue details, and programme availability.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span><i class="fas fa-door-open faq-ico"></i> How can I enrol or learn more?</span>
+                <i class="fas fa-chevron-down faq-arrow"></i>
+              </button>
+              <div class="faq-a">
+                <p>Simply get in touch through the contact form, WhatsApp, or email. We would be happy to answer your questions, discuss the most suitable programme for your child or family, and guide you through the enrolment process.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- WHAT MAKES GESMA DIFFERENT -->
+  <section class="diff-section">
+    <div class="container">
+      <div class="tc fade-up">
+        <span class="tag tag-blue">Our Difference</span>
+        <h2 class="section-title">What Makes GESMA <em>Different</em></h2>
+        <div class="divider"></div>
+        <p class="section-desc">A welcoming, English-speaking community where faith grows through structured learning, honest discussion, companionship, and a true sense of belonging.</p>
+      </div>
+      <div class="diff-grid">
+        <div class="diff-card fade-up delay-1">
+          <div class="diff-icon"><i class="fas fa-language"></i></div>
+          <h3>English-Speaking Environment</h3>
+          <p>Programmes are delivered entirely in English, making them accessible to international and multicultural families.</p>
+        </div>
+        <div class="diff-card fade-up delay-2">
+          <div class="diff-icon"><i class="fas fa-book-open"></i></div>
+          <h3>Structured Islamic Learning</h3>
+          <p>Ages 6–14 follow the recognised An-Nasihah Curriculum, supporting faith, worship, manners, character, and daily practice.</p>
+        </div>
+        <div class="diff-card fade-up delay-3">
+          <div class="diff-icon"><i class="fas fa-comments"></i></div>
+          <h3>Guided Youth Discussions</h3>
+          <p>Teenagers explore faith, identity, purpose, and contemporary challenges through reflection and open, thoughtful discussion.</p>
+        </div>
+        <div class="diff-card fade-up delay-4">
+          <div class="diff-icon"><i class="fas fa-people-roof"></i></div>
+          <h3>Family-Centred</h3>
+          <p>Built around the real needs of Muslim families, with parents playing a central role in nurturing faith beyond the classroom.</p>
+        </div>
+        <div class="diff-card fade-up delay-5">
+          <div class="diff-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h3>Community &amp; Belonging</h3>
+          <p>Time for refreshments and friendship at every session, so learning is shared and children feel part of a caring community.</p>
+        </div>
+        <div class="diff-card fade-up delay-6">
+          <div class="diff-icon"><i class="fas fa-globe"></i></div>
+          <h3>Welcoming &amp; Diverse</h3>
+          <p>Families from many cultures and backgrounds come together around shared values, learning, and mutual support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE BUILT TOGETHER (IMPACT NUMBERS) -->
+  <section class="numbers-section" id="impact">
+    <div class="container">
+      <div class="tc fade-up">
+        <span class="tag tag-light">Alhamdulillah</span>
+        <h2 class="section-title nm-title">What We Built <em>Together</em></h2>
+        <div class="nm-period">September 2024 – June 2026 &nbsp;|&nbsp; 21 Months of Learning, Friendship &amp; Community</div>
+        <p class="nm-intro">By the mercy of Allah and through the collective efforts of parents, teachers, and volunteers, our children's halaqa programme has grown into a vibrant learning community.</p>
+      </div>
+
+      <div class="numbers-grid fade-up">
+        <div class="number-card">
+          <div class="stat-num" data-target="56">0</div>
+          <h4>Halaqa Gatherings</h4>
+          <p>Weekly sessions held consistently throughout the programme.</p>
+        </div>
+        <div class="number-card">
+          <div class="stat-num" data-target="200" data-suffix="+">0</div>
+          <h4>Learning Classes Delivered</h4>
+          <p>Across multiple age groups in every session.</p>
+        </div>
+        <div class="number-card">
+          <div class="stat-num" data-target="350" data-suffix="+">0</div>
+          <h4>Hours of Teaching &amp; Learning</h4>
+          <p>Using a structured curriculum for meaningful learning.</p>
+        </div>
+        <div class="number-card">
+          <div class="stat-num" data-target="2000" data-suffix="+">0</div>
+          <h4>Child Attendances</h4>
+          <p>Children coming together to learn, grow, and build beautiful friendships.</p>
+        </div>
+        <div class="number-card">
+          <div class="stat-num" data-target="300" data-suffix="+">0</div>
+          <h4>Meals Prepared &amp; Shared</h4>
+          <p>Lovingly prepared by mothers and families throughout the year.</p>
+        </div>
+        <div class="number-card">
+          <div class="stat-num" data-target="4" data-suffix="+">0</div>
+          <h4>Community Events</h4>
+          <p>Bringing families together for connection, activities, and celebrations.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -345,12 +488,12 @@
           <div class="testi-slide testi-active">
             <div class="testi-card">
               <div class="testi-quote-mark">&#10077;</div>
-              <p class="testi-text">GESMA gave my children a real Islamic identity while growing up in Geneva. In a city where it's hard to find English-speaking Muslim community, this has been a true blessing for our family.</p>
+              <p class="testi-text">GESMA has helped our children build a stronger connection with their faith while feeling part of a wider Muslim community. The weekly sessions are about much more than learning — they have found friendships, role models, and a sense of belonging.</p>
               <div class="testi-author">
-                <div class="testi-avatar" style="background:var(--blue)">S</div>
+                <div class="testi-avatar" style="background:var(--blue)">A</div>
                 <div class="testi-author-text">
-                  <strong>Sarah M.</strong>
-                  <span>Parent &middot; 3 years with GESMA</span>
+                  <strong>Amina Rahman</strong>
+                  <span>Public Health Specialist &middot; Bangladesh</span>
                 </div>
               </div>
             </div>
@@ -359,12 +502,12 @@
           <div class="testi-slide">
             <div class="testi-card">
               <div class="testi-quote-mark">&#10077;</div>
-              <p class="testi-text">The Youth Series discussions were unlike anything I'd experienced before — real conversations about real challenges, in English, with people who truly understand what it means to be Muslim in Switzerland.</p>
+              <p class="testi-text">One of the things we value most is that our children are learning Islam in a language they fully understand. The combination of Islamic learning, character development, and community is something we were looking for when we moved to Geneva.</p>
               <div class="testi-author">
                 <div class="testi-avatar" style="background:var(--navy)">A</div>
                 <div class="testi-author-text">
-                  <strong>Ahmed K.</strong>
-                  <span>Youth Series &middot; Ages 15+</span>
+                  <strong>Ahmad Verma</strong>
+                  <span>IT Professional &middot; India</span>
                 </div>
               </div>
             </div>
@@ -373,12 +516,12 @@
           <div class="testi-slide">
             <div class="testi-card">
               <div class="testi-quote-mark">&#10077;</div>
-              <p class="testi-text">As an expat family we struggled to find Islamic education for our kids that was actually in English. GESMA filled that gap completely. The teachers are dedicated and the community genuinely feels like family.</p>
+              <p class="testi-text">As an international family, it can sometimes be difficult to find activities that combine faith, learning, and community. GESMA has provided exactly that in a welcoming and supportive environment.</p>
               <div class="testi-author">
-                <div class="testi-avatar" style="background:#1b6e3f">F</div>
+                <div class="testi-avatar" style="background:#1b6e3f">N</div>
                 <div class="testi-author-text">
-                  <strong>Fatima R.</strong>
-                  <span>Parent of two &middot; Beginners &amp; Elementary</span>
+                  <strong>Nurul Hidayah</strong>
+                  <span>Education Specialist &middot; Indonesia</span>
                 </div>
               </div>
             </div>
@@ -387,12 +530,68 @@
           <div class="testi-slide">
             <div class="testi-card">
               <div class="testi-quote-mark">&#10077;</div>
-              <p class="testi-text">What I love most about GESMA is how welcoming it is. Families from so many different countries, all coming together with the same purpose. It's a beautiful example of multicultural Islam in action.</p>
+              <p class="testi-text">What stands out for us is the diversity of the community. Families from different countries and backgrounds come together with a shared purpose, and that creates a unique learning environment for our children.</p>
               <div class="testi-author">
-                <div class="testi-avatar" style="background:#7b3fa0">O</div>
+                <div class="testi-avatar" style="background:#7b3fa0">Y</div>
                 <div class="testi-author-text">
-                  <strong>Omar T.</strong>
-                  <span>Community Member &middot; Geneva</span>
+                  <strong>Youssef Benali</strong>
+                  <span>Engineer &middot; Morocco</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="testi-quote-mark">&#10077;</div>
+              <p class="testi-text">The Youth Discussion Series gives us a space to talk openly about questions that matter to young Muslims today. The discussions are thoughtful, relevant, and help us connect our faith to everyday life.</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:var(--blue)">S</div>
+                <div class="testi-author-text">
+                  <strong>Sara, 17</strong>
+                  <span>Youth Series &middot; Malaysia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="testi-quote-mark">&#10077;</div>
+              <p class="testi-text">I enjoy that we can ask honest questions and hear different perspectives in a respectful environment. It has helped me become more confident in my identity as a Muslim.</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:var(--navy)">O</div>
+                <div class="testi-author-text">
+                  <strong>Omar, 16</strong>
+                  <span>Youth Series &middot; UAE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="testi-quote-mark">&#10077;</div>
+              <p class="testi-text">GESMA provides a warm family atmosphere where children learn, parents connect, and everyone feels welcome regardless of their background.</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:#1b6e3f">M</div>
+                <div class="testi-author-text">
+                  <strong>Mariam Dupont</strong>
+                  <span>Teacher &middot; Switzerland</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="testi-quote-mark">&#10077;</div>
+              <p class="testi-text">The discussions challenge us to think more deeply about faith, purpose, and contemporary issues. It feels very different from a traditional classroom and has helped me grow personally and spiritually.</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:#7b3fa0">H</div>
+                <div class="testi-author-text">
+                  <strong>Hamza, 18</strong>
+                  <span>Youth Series &middot; Pakistan</span>
                 </div>
               </div>
             </div>
@@ -409,6 +608,10 @@
             <button class="testi-dot" onclick="testiGoTo(1)"></button>
             <button class="testi-dot" onclick="testiGoTo(2)"></button>
             <button class="testi-dot" onclick="testiGoTo(3)"></button>
+            <button class="testi-dot" onclick="testiGoTo(4)"></button>
+            <button class="testi-dot" onclick="testiGoTo(5)"></button>
+            <button class="testi-dot" onclick="testiGoTo(6)"></button>
+            <button class="testi-dot" onclick="testiGoTo(7)"></button>
           </div>
           <button class="testi-arrow" id="testiNext" onclick="testiNav(1)" aria-label="Next">
             <i class="fas fa-chevron-right"></i>
@@ -473,10 +676,9 @@
     <div class="container">
       <div class="tc fade-up">
         <span class="tag tag-blue">Learn &amp; Grow</span>
-        <h2 class="section-title">Our <em>Programs</em></h2>
+        <h2 class="section-title">Our <em>Programmes</em></h2>
         <div class="divider"></div>
-        <p class="section-desc">Structured Islamic studies for children and youth, tailored to different age groups. All
-          classes are taught in English — ideal for international and multicultural families in Geneva.</p>
+        <p class="section-desc">Two complementary learning pathways: <strong>Structured Islamic Learning</strong> (ages 6–14) following the An-Nasihah Islamic Curriculum, and <strong>Guided Youth Discussions</strong> (ages 15+) — all in a welcoming English-speaking environment.</p>
       </div>
 
       <div class="prog-filter-tabs fade-up">
@@ -489,175 +691,121 @@
 
       <div class="prog-grid">
 
-        <div class="prog-card fade-up delay-1" data-filter="6-9" onclick="openModal('beginners')">
+        <div class="prog-card fade-up delay-1" data-filter="6-9" onclick="openModal('foundation')">
           <div class="prog-inner">
             <div class="prog-front">
-              <div class="prog-age-badge"><i class="fas fa-child"></i> Ages 6–7 · Book 1</div>
-              <h3>Islamic Studies Beginners</h3>
-              <p>A foundational introduction to Islamic teachings, values, and daily practice for young learners.</p>
-              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Fridays: 5:30 – 7:30 PM</div>
+              <div class="prog-age-badge"><i class="fas fa-child"></i> Ages 6–9 · Mixed Group</div>
+              <h3>Foundation Islamic Studies</h3>
+              <p>A warm and engaging introduction to Islam that helps children develop a love for Allah, good character, and a strong foundation in faith and worship.</p>
+              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Friday evenings (2 hrs)</div>
               <div class="prog-hint"><i class="fas fa-sync-alt"></i> Hover to see full details</div>
             </div>
             <div class="prog-back pb-navy">
               <div>
-                <div class="prog-back-badge"><i class="fas fa-child"></i> Ages 6–7 · Book 1</div>
-                <h3>Islamic Studies Beginners</h3>
+                <div class="prog-back-badge"><i class="fas fa-child"></i> Ages 6–9 · Mixed Group</div>
+                <h3>Foundation Islamic Studies</h3>
                 <ul>
-                  <li>Introduction to the five pillars of Islam</li>
-                  <li>Arabic letters and basic Islamic vocabulary</li>
-                  <li>Stories of the Prophets (peace be upon them)</li>
-                  <li>Islamic manners and daily du'as</li>
-                  <li>Aqeedah foundations for children</li>
+                  <li>Based on the An-Nasihah Islamic Curriculum</li>
+                  <li>Islamic beliefs, worship, stories of the Prophets</li>
+                  <li>Character and manners through stories and activities</li>
+                  <li>Interactive and age-appropriate learning</li>
+                  <li>Welcoming English-speaking environment</li>
                 </ul>
               </div>
-              <button class="prog-enroll" onclick="openModal('beginners');event.stopPropagation()"><i
-                  class="fas fa-info-circle"></i> Full Details & Enrol</button>
+              <button class="prog-enroll" onclick="openModal('foundation');event.stopPropagation()"><i
+                  class="fas fa-info-circle"></i> Learn More & Enrol</button>
             </div>
           </div>
         </div>
 
-        <div class="prog-card fade-up delay-2" data-filter="6-9" onclick="openModal('elementary')">
+        <div class="prog-card fade-up delay-2" data-filter="10-14" onclick="openModal('boys')">
           <div class="prog-inner">
             <div class="prog-front">
-              <div class="prog-age-badge"><i class="fas fa-child"></i> Ages 8–9 · Book 2</div>
-              <h3>Islamic Studies Elementary</h3>
-              <p>Continuing education building on Book 1, deepening prayer, worship, and Islamic practice.</p>
-              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Fridays: 5:30 – 7:30 PM</div>
+              <div class="prog-age-badge"><i class="fas fa-male"></i> Ages 10–14 · Boys Group</div>
+              <h3>Boys Islamic Studies</h3>
+              <p>Structured Islamic learning that helps boys deepen their knowledge, strengthen their faith, and develop confidence, responsibility, and positive character.</p>
+              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Friday evenings (2 hrs)</div>
               <div class="prog-hint"><i class="fas fa-sync-alt"></i> Hover to see full details</div>
             </div>
             <div class="prog-back pb-blue">
               <div>
-                <div class="prog-back-badge"><i class="fas fa-child"></i> Ages 8–9 · Book 2</div>
-                <h3>Islamic Studies Elementary</h3>
+                <div class="prog-back-badge"><i class="fas fa-male"></i> Ages 10–14 · Boys Group</div>
+                <h3>Boys Islamic Studies</h3>
                 <ul>
-                  <li>Deeper study of Islamic worship and prayer</li>
-                  <li>Prayer — method, significance and khushoo'</li>
-                  <li>Seerah of the Prophet ﷺ</li>
-                  <li>Basic Islamic jurisprudence (fiqh)</li>
-                  <li>Character building through Islamic ethics</li>
+                  <li>Continuing the An-Nasihah learning pathway</li>
+                  <li>Beliefs, worship, Seerah, history and daily conduct</li>
+                  <li>Supportive boys-only learning environment</li>
+                  <li>Opportunities for discussion and reflection</li>
+                  <li>Focus on character and personal growth</li>
                 </ul>
               </div>
-              <button class="prog-enroll" onclick="openModal('elementary');event.stopPropagation()"><i
-                  class="fas fa-info-circle"></i> Full Details & Enrol</button>
+              <button class="prog-enroll" onclick="openModal('boys');event.stopPropagation()"><i
+                  class="fas fa-info-circle"></i> Learn More & Enrol</button>
             </div>
           </div>
         </div>
 
-        <div class="prog-card fade-up delay-3" data-filter="10-14" onclick="openModal('boysgroup')">
+        <div class="prog-card fade-up delay-3" data-filter="10-14" onclick="openModal('girls')">
           <div class="prog-inner">
             <div class="prog-front">
-              <div class="prog-age-badge"><i class="fas fa-male"></i> Ages 10–14 · Boys</div>
-              <h3>Islamic Studies Boys Group</h3>
-              <p>Intermediate studies covering Islamic history, ethics, and moral education for boys.</p>
-              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Fridays: 5:30 – 7:30 PM</div>
-              <div class="prog-hint"><i class="fas fa-sync-alt"></i> Hover to see full details</div>
-            </div>
-            <div class="prog-back pb-teal">
-              <div>
-                <div class="prog-back-badge"><i class="fas fa-male"></i> Ages 10–14 · Boys</div>
-                <h3>Islamic Studies Boys Group</h3>
-                <ul>
-                  <li>Islamic studies circles and group discussion</li>
-                  <li>Islamic history and civilisation</li>
-                  <li>Ethics, character, and responsibility</li>
-                  <li>Contemporary Islamic issues for youth</li>
-                  <li>Peer mentoring and brotherhood</li>
-                </ul>
-              </div>
-              <button class="prog-enroll" onclick="openModal('boysgroup');event.stopPropagation()"><i
-                  class="fas fa-info-circle"></i> Full Details & Enrol</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="prog-card fade-up delay-4" data-filter="10-14" onclick="openModal('girlsgroup')">
-          <div class="prog-inner">
-            <div class="prog-front">
-              <div class="prog-age-badge"><i class="fas fa-female"></i> Ages 10–14 · Girls</div>
-              <h3>Islamic Studies Girls Group</h3>
-              <p>Intermediate studies covering Islamic history, ethics, and moral education for girls.</p>
-              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Fridays: 5:30 – 7:30 PM</div>
+              <div class="prog-age-badge"><i class="fas fa-female"></i> Ages 10–14 · Girls Group</div>
+              <h3>Girls Islamic Studies</h3>
+              <p>Structured Islamic learning that helps girls deepen their knowledge, strengthen their faith, and develop confidence, character, and a positive Muslim identity.</p>
+              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Friday evenings (2 hrs)</div>
               <div class="prog-hint"><i class="fas fa-sync-alt"></i> Hover to see full details</div>
             </div>
             <div class="prog-back pb-deep">
               <div>
-                <div class="prog-back-badge"><i class="fas fa-female"></i> Ages 10–14 · Girls</div>
-                <h3>Islamic Studies Girls Group</h3>
+                <div class="prog-back-badge"><i class="fas fa-female"></i> Ages 10–14 · Girls Group</div>
+                <h3>Girls Islamic Studies</h3>
                 <ul>
-                  <li>Islamic vocabulary and foundational knowledge</li>
-                  <li>Role models in Islamic history (Khadijah, Aisha RA)</li>
-                  <li>Islamic etiquette and sisterhood</li>
-                  <li>Faith, identity, and confidence</li>
-                  <li>Creative Islamic arts and activities</li>
+                  <li>Continuing the An-Nasihah learning pathway</li>
+                  <li>Beliefs, worship, Seerah, history and daily conduct</li>
+                  <li>Supportive girls-only learning environment</li>
+                  <li>Opportunities for discussion and reflection</li>
+                  <li>Confidence, character and positive identity</li>
                 </ul>
               </div>
-              <button class="prog-enroll" onclick="openModal('girlsgroup');event.stopPropagation()"><i
-                  class="fas fa-info-circle"></i> Full Details & Enrol</button>
+              <button class="prog-enroll" onclick="openModal('girls');event.stopPropagation()"><i
+                  class="fas fa-info-circle"></i> Learn More & Enrol</button>
             </div>
           </div>
         </div>
 
-        <div class="prog-card fade-up delay-5" data-filter="15plus" onclick="openModal('youthboys')">
+        <div class="prog-card fade-up delay-4" data-filter="15plus" onclick="openModal('youth')">
           <div class="prog-popular-badge"><i class="fas fa-star"></i> Most Popular</div>
           <div class="prog-inner">
             <div class="prog-front">
-              <div class="prog-age-badge"><i class="fas fa-comments"></i> Ages 15+ · Boys</div>
-              <h3>Youth Series – Boys</h3>
-              <p>An engaging series for teenage boys exploring important questions about faith, life, and identity in today's world.</p>
+              <div class="prog-age-badge"><i class="fas fa-comments"></i> Ages 15+ · Guided Discussions</div>
+              <h3>Youth Discussion Series</h3>
+              <p>Thoughtful conversations for Muslim teenagers and young adults exploring faith, identity, purpose, and the challenges of contemporary life.</p>
               <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Twice monthly · Ages 15+</div>
               <div class="prog-hint"><i class="fas fa-sync-alt"></i> Hover to see full details</div>
             </div>
             <div class="prog-back pb-green">
               <div>
-                <div class="prog-back-badge"><i class="fas fa-comments"></i> Ages 15+ · Boys</div>
-                <h3>Youth Series – Boys</h3>
+                <div class="prog-back-badge"><i class="fas fa-comments"></i> Ages 15+ · Guided Discussions</div>
+                <h3>Youth Discussion Series</h3>
                 <ul>
-                  <li>Faith & belief — strengthening core beliefs in the modern world</li>
-                  <li>Life & struggles — dealing with hardship, anxiety, and uncertainty</li>
-                  <li>Identity & character — living Islam confidently in everyday life</li>
-                  <li>Contemporary challenges — social media, materialism, peer pressure</li>
-                  <li>Essentials & devotional practice — worship habits and Prophetic guidance</li>
+                  <li>Guided discussions and reflection</li>
+                  <li>Drawing on Yaqeen Institute &amp; Living Islam resources</li>
+                  <li>Real-life questions through an Islamic perspective</li>
+                  <li>Small-group and interactive format</li>
+                  <li>Twice-monthly sessions with light refreshments</li>
                 </ul>
               </div>
-              <button class="prog-enroll" onclick="openModal('youthboys');event.stopPropagation()"><i
-                  class="fas fa-info-circle"></i> Full Details & Enrol</button>
+              <button class="prog-enroll" onclick="openModal('youth');event.stopPropagation()"><i
+                  class="fas fa-info-circle"></i> Register Interest</button>
             </div>
           </div>
         </div>
 
-        <div class="prog-card fade-up delay-6" data-filter="15plus" onclick="openModal('youthgirls')">
+        <div class="prog-card fade-up delay-5" data-filter="parents" onclick="openModal('parents')">
           <div class="prog-inner">
             <div class="prog-front">
-              <div class="prog-age-badge"><i class="fas fa-comments"></i> Ages 15+ · Girls</div>
-              <h3>Youth Series – Girls</h3>
-              <p>An engaging series for teenage girls exploring important questions about faith, life, and identity in today's world.</p>
-              <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> Twice monthly · Ages 15+</div>
-              <div class="prog-hint"><i class="fas fa-sync-alt"></i> Hover to see full details</div>
-            </div>
-            <div class="prog-back pb-deep">
-              <div>
-                <div class="prog-back-badge"><i class="fas fa-comments"></i> Ages 15+ · Girls</div>
-                <h3>Youth Series – Girls</h3>
-                <ul>
-                  <li>Faith & belief — strengthening core beliefs in the modern world</li>
-                  <li>Life & struggles — dealing with hardship, anxiety, and uncertainty</li>
-                  <li>Identity & character — living Islam confidently in everyday life</li>
-                  <li>Contemporary challenges — social media, materialism, peer pressure</li>
-                  <li>Essentials & devotional practice — worship habits and Prophetic guidance</li>
-                </ul>
-              </div>
-              <button class="prog-enroll" onclick="openModal('youthgirls');event.stopPropagation()"><i
-                  class="fas fa-info-circle"></i> Full Details & Enrol</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="prog-card fade-up delay-7" data-filter="parents" onclick="openModal('parental')">
-          <div class="prog-inner">
-            <div class="prog-front">
-              <div class="prog-age-badge"><i class="fas fa-users"></i> For Parents</div>
-              <h3>Parental Classes</h3>
-              <p>A dedicated program to support Muslim parents raising children with strong Islamic identity.</p>
+              <div class="prog-age-badge"><i class="fas fa-users"></i> For Parents &amp; Guardians</div>
+              <h3>Parents &amp; Family Learning</h3>
+              <p>Supporting parents in nurturing faith, character, and a strong Muslim identity within the family.</p>
               <div class="prog-schedule"><i class="fas fa-calendar-alt"></i> <span
                   style="background:var(--blue-bg);color:var(--blue);padding:2px 10px;border-radius:50px;font-size:11px;font-weight:700">COMING
                   SOON</span></div>
@@ -665,30 +813,22 @@
             </div>
             <div class="prog-back pb-gold">
               <div>
-                <div class="prog-back-badge"><i class="fas fa-users"></i> For Parents</div>
-                <h3>Parental Classes</h3>
+                <div class="prog-back-badge"><i class="fas fa-users"></i> For Parents &amp; Guardians</div>
+                <h3>Parents &amp; Family Learning</h3>
                 <ul>
-                  <li>Raising children with Islamic values in the West</li>
-                  <li>Practical parenting tools from Sunnah</li>
-                  <li>Supporting your child's Islamic identity</li>
-                  <li>Q&amp;A sessions with qualified scholars</li>
-                  <li>Peer support network for Muslim parents</li>
+                  <li>Parenting in a multicultural environment</li>
+                  <li>Supporting children's faith and identity</li>
+                  <li>Family learning and community connection</li>
+                  <li>Workshops, discussions and Q&amp;A sessions</li>
                 </ul>
               </div>
-              <button class="prog-enroll" onclick="openModal('parental');event.stopPropagation()"><i
+              <button class="prog-enroll" onclick="openModal('parents');event.stopPropagation()"><i
                   class="fas fa-info-circle"></i> Register Interest</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="curriculum-note fade-up" style="margin-top:24px">
-        <div class="curr-icon"><i class="fas fa-book"></i></div>
-        <div class="curr-text">
-          <strong>About Our Curriculum:</strong>
-          <p>Our syllabus is built on the <em>An-Nasihah Islamic Curriculum</em> — a comprehensive, structured programme developed by leading Shaikhs and Ulama from <em>Darul Uloom Leicester</em>, Dewsbury, Bury, and <em>Fatah al-Dawah</em> (India &amp; South Africa). Refined over many years, it is widely regarded as one of the most trusted English-medium Islamic education frameworks available today. <a href="https://an-nasihah.com/islamic-curriculum/" target="_blank" rel="noopener">Explore the curriculum →</a></p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -707,10 +847,9 @@
     <div class="container">
       <div class="tc fade-up">
         <span class="tag tag-blue">Get In Touch</span>
-        <h2 class="section-title">Contact &amp; <em>Location</em></h2>
+        <h2 class="section-title">Join Our <em>Community</em></h2>
         <div class="divider"></div>
-        <p class="section-desc">We'd love to hear from you. Whether you're looking to enrol your children, join our
-          community, or learn more about GESMA — reach out and we'll be happy to help.</p>
+        <p class="section-desc">Whether you're looking for Islamic education for your child, a meaningful discussion space for a teenager, or a welcoming community for your family — we'd be delighted to hear from you. We welcome enquiries from families across Geneva and surrounding areas.</p>
       </div>
       <div class="contact-inner">
         <div class="contact-form-wrap fade-left">
@@ -722,31 +861,37 @@
           <div class="fg" id="fg-email"><label>Email Address</label><input id="fEmail" type="email" placeholder="your@email.com" /><span class="fg-msg"></span></div>
           <div class="fg"><label>Phone (optional)</label><input type="tel" placeholder="+41 79 000 00 00" /></div>
           <div class="fg">
-            <label>Subject</label>
+            <label>Programme of Interest</label>
             <select>
               <option>Enrol my child in a program</option>
               <option>General enquiry about GESMA</option>
-              <option>Youth Series information</option>
-              <option>Parental Classes interest</option>
+              <option>Youth Discussion Series information</option>
+              <option>Parents &amp; Family Learning interest</option>
               <option>Volunteer / Get involved</option>
-              <option>Partnership or inter-faith dialogue</option>
+              <option>Visit a session</option>
               <option>Other</option>
             </select>
           </div>
           <div class="fg" id="fg-msg"><label>Message</label><textarea id="fMsg" placeholder="Tell us how we can help…"></textarea><span class="fg-msg"></span></div>
+          <!-- Honeypot anti-spam field: hidden from users, must stay empty -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="fHoney">Leave this field empty</label>
+            <input type="text" id="fHoney" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <p class="form-consent">By sending this message you agree that GESMA may use the details you provide solely to respond to your enquiry, as described in our <a href="privacy.html">Privacy Policy</a>.</p>
           <button class="btn-send" data-magnetic onclick="sendMsg(this)">
             <i class="fas fa-paper-plane"></i> Send Message
           </button>
         </div>
         <div class="contact-map-col fade-right">
           <div class="contact-info-cards">
-            <div class="ci-card">
-              <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <a class="ci-card" href="https://wa.me/41798369237?text=Assalamu%20Alaikum!%20I%27d%20like%20to%20learn%20more%20about%20GESMA." target="_blank" rel="noopener" style="text-decoration:none">
+              <div class="ci-icon"><i class="fab fa-whatsapp"></i></div>
               <div class="ci-text">
-                <p>Our Location</p>
-                <p>Coming Soon</p>
+                <p>WhatsApp</p>
+                <p>+41 79 836 92 37</p>
               </div>
-            </div>
+            </a>
             <div class="ci-card ci-copyable" onclick="copyToClipboard('info@gesma.ch', this)" role="button" tabindex="0">
               <div class="ci-icon"><i class="fas fa-envelope"></i></div>
               <div class="ci-text">
@@ -755,17 +900,17 @@
               </div>
             </div>
             <div class="ci-card">
-              <div class="ci-icon"><i class="fas fa-clock"></i></div>
+              <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
               <div class="ci-text">
-                <p>Classes</p>
-                <p>Fridays 5:30–7:30 PM · Twice monthly (Youth)</p>
+                <p>Location</p>
+                <p>Geneva, Switzerland</p>
               </div>
             </div>
             <div class="ci-card">
-              <div class="ci-icon"><i class="fas fa-language"></i></div>
+              <div class="ci-icon"><i class="fas fa-clock"></i></div>
               <div class="ci-text">
-                <p>Language</p>
-                <p>All programs taught in English</p>
+                <p>Sessions</p>
+                <p>Islamic Studies: Fri evening (2 hrs) · Youth: Twice monthly</p>
               </div>
             </div>
           </div>
@@ -780,6 +925,7 @@
     </div>
   </section>
 
+
   <!-- FOOTER -->
   <footer>
     <div class="container">
@@ -792,26 +938,7 @@
               <span style="color:rgba(255,255,255,.45);font-size:10px;letter-spacing:2px;text-transform:uppercase">Geneva · Switzerland</span>
             </div>
           </div>
-          <p>A welcoming home for English-speaking Muslims in Geneva — nurturing faith, knowledge and community since
-            2024.</p>
-          <div class="social-bar">
-            <a href="#" class="soc"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="soc"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="soc"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="soc"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" class="soc"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Programs</h4>
-          <ul>
-            <li><a href="#">Islamic Studies – Beginners</a></li>
-            <li><a href="#">Islamic Studies – Elementary</a></li>
-            <li><a href="#">Boys Group (10–14)</a></li>
-            <li><a href="#">Girls Group (10–14)</a></li>
-            <li><a href="#">Youth Series (15+)</a></li>
-            <li><a href="#">Parental Classes</a></li>
-          </ul>
+          <p>An English-speaking Muslim community serving Geneva and surrounding areas — supporting children, youth, and families through Islamic education, meaningful discussions, and lasting friendships.</p>
         </div>
         <div class="footer-col">
           <h4>Organisation</h4>
@@ -824,19 +951,18 @@
           <ul>
             <li><a href="#contact">Contact Us</a></li>
             <li><a href="#contact">Enrolment</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Safeguarding Policy</a></li>
-            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="safeguarding.html">Safeguarding Policy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="impressum.html">Legal Notice</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2024 GESMA — Geneva English-Speaking Muslims Association. All rights reserved.</span>
+        <span>© 2026 GESMA — Geneva English-Speaking Muslims Association. All rights reserved.</span>
         <div style="display:flex;gap:20px">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Cookies</a>
+          <a href="safeguarding.html">Safeguarding</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="impressum.html">Legal Notice</a>
         </div>
       </div>
     </div>
@@ -872,7 +998,7 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=3"></script>
 </body>
 
 </html>

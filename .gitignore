@@ -1,0 +1,16 @@
+# ── OS / editor cruft ──────────────────────────────
+.DS_Store
+**/.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# ── Internal / working files — NOT part of the website ──
+# Content drafts, source spreadsheets and scratch images that
+# must never be published to the public web root.
+*.docx
+*.doc
+*.xlsx
+*.pdf
+numbers.jpeg

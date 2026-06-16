@@ -1498,52 +1498,6 @@ section {
     background: rgba(255, 255, 255, .3)
 }
 
-.curriculum-note {
-    background: white;
-    border-radius: var(--r-lg);
-    padding: 28px 36px;
-    border: 1px solid var(--border);
-    box-shadow: var(--sh-sm);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    margin-top: 24px;
-}
-
-.curr-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    background: rgba(37, 85, 160, .07);
-    color: var(--blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0
-}
-
-.curr-text p {
-    font-size: 14px;
-    color: var(--ink-soft);
-    line-height: 1.7
-}
-
-.curr-text strong {
-    color: var(--navy);
-    font-weight: 600
-}
-
-.curr-text a {
-    color: var(--blue);
-    text-decoration: none;
-    font-weight: 600
-}
-
-.curr-text a:hover {
-    text-decoration: underline
-}
-
 /* ─── EVENTS ─────────────────────────────────────────────────── */
 .events-section {
     background: white
@@ -2100,6 +2054,26 @@ section {
     gap: 16px
 }
 
+.hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.form-consent {
+    font-size: 12px;
+    line-height: 1.65;
+    color: var(--ink-faint);
+    margin: 0 0 18px;
+}
+
+.form-consent a {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
 .btn-send {
     width: 100%;
     padding: 14px;
@@ -2194,14 +2168,14 @@ section {
 footer {
     background: var(--navy);
     color: rgba(255, 255, 255, .7);
-    padding: 70px 0 32px
+    padding: 40px 0 20px
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 50px;
-    margin-bottom: 50px
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 28px
 }
 
 .footer-brand .logo-text strong {
@@ -2213,11 +2187,11 @@ footer {
 }
 
 .footer-brand p {
-    font-size: 14px;
+    font-size: 13px;
     color: rgba(255, 255, 255, .5);
-    line-height: 1.8;
+    line-height: 1.7;
     max-width: 280px;
-    margin: 18px 0 24px
+    margin: 12px 0 16px
 }
 
 .footer-brand .arabic-motto {
@@ -2228,40 +2202,13 @@ footer {
     direction: rtl
 }
 
-.social-bar {
-    display: flex;
-    gap: 10px
-}
-
-.soc {
-    width: 36px;
-    height: 36px;
-    border-radius: 9px;
-    background: rgba(255, 255, 255, .07);
-    border: 1px solid rgba(255, 255, 255, .1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, .55);
-    font-size: 15px;
-    text-decoration: none;
-    transition: all var(--transition)
-}
-
-.soc:hover {
-    background: var(--sky);
-    border-color: var(--sky);
-    color: white;
-    transform: translateY(-3px)
-}
-
 .footer-col h4 {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     color: white;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-bottom: 20px
+    margin-bottom: 12px
 }
 
 .footer-col ul {
@@ -2269,13 +2216,13 @@ footer {
 }
 
 .footer-col ul li {
-    margin-bottom: 10px
+    margin-bottom: 7px
 }
 
 .footer-col ul li a {
     color: rgba(255, 255, 255, .5);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     transition: color var(--transition)
 }
 
@@ -2285,7 +2232,7 @@ footer {
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, .08);
-    padding-top: 28px;
+    padding-top: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -2393,13 +2340,13 @@ footer {
 .fg-msg {
     display: block;
     font-size: 11.5px;
-    margin-top: 4px;
-    min-height: 16px;
+    margin-top: 0;
+    min-height: 0;
     transition: color 0.2s;
 }
 
-.fg.fg-valid .fg-msg  { color: #2d9e5f; }
-.fg.fg-invalid .fg-msg { color: #d94040; }
+.fg.fg-valid .fg-msg  { color: #2d9e5f; margin-top: 5px; }
+.fg.fg-invalid .fg-msg { color: #d94040; margin-top: 5px; }
 
 /* ─── 3. MOST POPULAR BADGE ──────────────────────────────────── */
 .prog-popular-badge {
@@ -3352,6 +3299,10 @@ footer {
 ═══════════════════════════════════════════════════════════ */
 
 /* ── #4 Section title letter reveal ─────────────────────── */
+.sl-word {
+    display: inline-block;
+    white-space: nowrap;
+}
 .sl-letter {
     display: inline-block;
     white-space: pre;
@@ -3528,3 +3479,178 @@ footer {
 }
 
 /* ─── PROG CARD GLOW ─────────────────────────────────────────── */
+
+/* ═══════════════════════════════════════════════════════════
+   IDENTITY BAR (below hero)
+═══════════════════════════════════════════════════════════ */
+.identity-bar {
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,.06);
+}
+.identity-bar .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 14px 30px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+.identity-bar span {
+    position: relative;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.72);
+}
+.identity-bar span:not(:last-child)::after {
+    content: '✦';
+    position: absolute;
+    right: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 7px;
+    color: var(--sky);
+    opacity: .7;
+}
+
+/* light tag for dark backgrounds */
+.tag-light {
+    background: rgba(255,255,255,.12);
+    color: #cfe0f7;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NUMBERS / "WHAT WE BUILT TOGETHER"
+═══════════════════════════════════════════════════════════ */
+.numbers-section {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-soft) 55%, var(--blue) 120%);
+    position: relative;
+    overflow: hidden;
+}
+.numbers-section::before {
+    content: '﷽';
+    position: absolute;
+    right: -2%;
+    top: 8%;
+    font-family: 'Amiri', serif;
+    font-size: 180px;
+    color: rgba(255,255,255,.035);
+    pointer-events: none;
+}
+.numbers-section .section-title.nm-title { color: #fff; }
+.numbers-section .section-title em { color: var(--sky); }
+.numbers-section .divider { background: linear-gradient(90deg, var(--sky), transparent); }
+.nm-period {
+    display: inline-block;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.18);
+    color: #dce8fa;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .4px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-bottom: 22px;
+}
+.nm-intro {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.85;
+    color: rgba(255,255,255,.74);
+}
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 52px;
+}
+.number-card {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: var(--r-lg);
+    padding: 30px 26px;
+    backdrop-filter: blur(8px);
+    transition: transform var(--transition), background var(--transition), border-color var(--transition);
+}
+.number-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,.12);
+    border-color: rgba(255,255,255,.22);
+}
+.number-card .stat-num {
+    font-size: clamp(40px, 4vw, 54px);
+    margin-bottom: 6px;
+    text-align: left;
+}
+.number-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.number-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.62);
+}
+/* ═══════════════════════════════════════════════════════════
+   WHAT MAKES GESMA DIFFERENT
+═══════════════════════════════════════════════════════════ */
+.diff-section { background: var(--off, #f6f9fd); }
+.diff-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 48px;
+}
+.diff-card {
+    background: #fff;
+    border: 1px solid var(--border, #e6edf6);
+    border-radius: var(--r-lg);
+    padding: 32px 28px;
+    box-shadow: var(--sh-sm);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.diff-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sh-lg);
+}
+.diff-card .diff-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    margin-bottom: 20px;
+}
+.diff-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+.diff-card p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+    .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+    .diff-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+    .numbers-grid { grid-template-columns: 1fr; }
+    .diff-grid { grid-template-columns: 1fr; }
+}
+
