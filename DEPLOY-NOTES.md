@@ -6,6 +6,7 @@ The site is **static** — just upload the files below to any web host
 ## Publish ONLY these
 
 ```
+.htaccess          (HTTPS redirect + security headers — Apache hosts)
 index.html
 privacy.html
 safeguarding.html
@@ -14,6 +15,10 @@ style.css
 main.js
 assets/            (fonts, fontawesome, logo, gallery photos)
 ```
+
+Upload everything above into the web root (usually `public_html/`).
+Note: `.htaccess` is a hidden file — enable "show hidden files" in your
+FTP client / cPanel File Manager, or it may not appear after upload.
 
 ## NEVER publish these (information disclosure risk)
 
@@ -29,15 +34,14 @@ If your host deploys an entire folder, either point it at a clean
 export containing only the "publish" list above, or confirm the host
 blocks dotfiles and the file types listed.
 
-## Recommended host security headers
+## Security headers
 
-Set these at the hosting layer (format depends on host — ask if you
-need the exact file for yours):
+These are already configured in the included **`.htaccess`** file
+(Apache / cPanel hosts) — HTTPS redirect, CSP, X-Frame-Options,
+X-Content-Type-Options, Referrer-Policy, and Permissions-Policy.
 
-- `Content-Security-Policy`
-- `X-Frame-Options: DENY`
-- `X-Content-Type-Options: nosniff`
-- `Referrer-Policy: strict-origin-when-cross-origin`
-- `Strict-Transport-Security: max-age=31536000; includeSubDomains`
+After the site is live and HTTPS works everywhere, enable HSTS by
+uncommenting the `Strict-Transport-Security` line in `.htaccess`.
 
-Serve the site over HTTPS only.
+If your host runs **Nginx** instead of Apache, the `.htaccess` file is
+ignored — ask and the same rules can be provided as an Nginx server block.

@@ -1264,18 +1264,16 @@ section {
 }
 
 .prog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 22px;
     position: relative;
 }
 
-.prog-grid .prog-card:last-child:nth-child(3n+1) {
-    grid-column: 2;
-}
-
 /* FLIP CARDS */
 .prog-card {
+    width: calc((100% - 44px) / 3);
     height: auto;
     height: 350px;
     perspective: 1400px;
@@ -2885,8 +2883,8 @@ footer {
 
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
 @media(max-width:1024px) {
-    .prog-grid {
-        grid-template-columns: 1fr 1fr
+    .prog-card {
+        width: calc((100% - 22px) / 2)
     }
 
     .lead-grid {
@@ -2925,8 +2923,8 @@ footer {
         display: flex
     }
 
-    .prog-grid {
-        grid-template-columns: 1fr
+    .prog-card {
+        width: 100%
     }
 
     .contact-inner {
