@@ -32,20 +32,15 @@ traditional host (Infomaniak, Hostpoint, Hostinger, cPanel, etc.).
 - [ ] Open **File Manager** (in cPanel/hPanel) or connect via **FTP**
       (e.g. FileZilla — host gives you FTP credentials).
 - [ ] Enable **"show hidden files"** (so `.htaccess` is visible).
-- [ ] Upload into the web root — **only these**:
-  ```
-  .htaccess
-  index.html
-  privacy.html
-  safeguarding.html
-  impressum.html
-  style.css
-  main.js
-  assets/
-  ```
-- [ ] Do **NOT** upload: `.git/`, `.DS_Store`, `*.docx`, `numbers.jpeg`,
-      `DEPLOY-NOTES.md`, `SETUP-CHECKLIST.md`.
+- [ ] Upload the **contents of the `public/` folder** into the web root
+      (everything publicly served lives in `public/` — `.htaccess`,
+      `_headers`, the HTML pages, `style.css`, `main.js`, `assets/`).
+- [ ] Do **NOT** upload anything outside `public/` (`.git/`, `.DS_Store`,
+      `*.docx`, `numbers.jpeg`, `DEPLOY-NOTES.md`, `SETUP-CHECKLIST.md`).
 - [ ] Confirm `.htaccess` actually uploaded (hidden files are easy to miss).
+
+> **Cloudflare Pages / Netlify:** instead of FTP, just set the **build
+> output directory** to `public` — the host serves that folder directly.
 
 ## 4. SSL / HTTPS
 
