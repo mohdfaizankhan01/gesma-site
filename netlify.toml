@@ -1,0 +1,5 @@
+# Netlify configuration
+# The site lives in public/ — publish that folder (no build step needed).
+# Netlify reads public/_headers and public/_redirects automatically.
+[build]
+  publish = "public"
