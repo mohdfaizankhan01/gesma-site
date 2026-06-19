@@ -1,0 +1,5 @@
+# GESMA — allow all crawlers
+User-agent: *
+Allow: /
+
+Sitemap: https://gesma.ch/sitemap.xml
