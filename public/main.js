@@ -518,7 +518,7 @@ function filterPrograms(filter, btn) {
         card.style.cssText = 'opacity:0;transform:scale(0.88) translateY(12px);transition:none;';
     });
 
-    void grid.offsetHeight; // force reflow — this is the LAST state for staying cards
+    void grid.offsetHeight; // force reflow; this is the LAST state for staying cards
 
     // LAST: capture new positions for staying cards
     const lastPos = new Map();
@@ -603,11 +603,11 @@ function sendMsg(btn) {
     const phone     = document.querySelector('#contact input[type="tel"]')?.value.trim() || '';
     const subject   = document.querySelector('#contact select')?.value || 'General Enquiry';
 
-    // Honeypot: real users never fill this hidden field. If filled, it's a bot —
+    // Honeypot: real users never fill this hidden field. If filled, it's a bot.
     // silently show success without sending, so the bot doesn't retry.
     if (document.getElementById('fHoney')?.value) {
         btn.disabled = true;
-        btn.innerHTML = '<i class="fas fa-check"></i> &nbsp;Message Sent — JazakAllah Khayr!';
+        btn.innerHTML = '<i class="fas fa-check"></i> &nbsp;Message Sent. JazakAllah Khayr!';
         return;
     }
 
@@ -643,7 +643,7 @@ function sendMsg(btn) {
     .then(({ status, data }) => {
         if (data.success) {
             starBurst(btn);
-            btn.innerHTML = '<i class="fas fa-check"></i> &nbsp;Message Sent — JazakAllah Khayr!';
+            btn.innerHTML = '<i class="fas fa-check"></i> &nbsp;Message Sent. JazakAllah Khayr!';
             btn.style.background = 'linear-gradient(135deg,#1b5e35,#2d9e5f)';
             ['fName','fLName','fEmail','fMsg'].forEach(id => { document.getElementById(id).value = ''; });
             document.querySelector('#contact input[type="tel"]') && (document.querySelector('#contact input[type="tel"]').value = '');

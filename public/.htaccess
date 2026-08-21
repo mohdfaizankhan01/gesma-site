@@ -1,5 +1,5 @@
 # ════════════════════════════════════════════════════════════════
-#  GESMA — Apache config for static hosting (cPanel / shared host)
+#  GESMA: Apache config for static hosting (cPanel / shared host)
 #  Upload this file to the public web root (e.g. public_html/).
 # ════════════════════════════════════════════════════════════════
 
@@ -23,13 +23,13 @@ RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
     # Restrict powerful browser features the site doesn't use
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
 
-    # Content-Security-Policy — tuned to what this site actually loads:
+    # Content-Security-Policy: tuned to what this site actually loads:
     #   scripts/styles: self + inline (site uses inline onclick handlers & style attrs)
     #   form post:      https://api.web3forms.com  (contact form fetch)
     #   map:            https://www.google.com      (embedded iframe)
     Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com; frame-src https://www.google.com; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
 
-    # HSTS — ONLY enable once HTTPS is confirmed working sitewide.
+    # HSTS: ONLY enable once HTTPS is confirmed working sitewide.
     # (Leave commented until then; it is hard to undo if HTTPS breaks.)
     # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>

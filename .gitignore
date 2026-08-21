@@ -14,3 +14,7 @@ Thumbs.db
 *.xlsx
 *.pdf
 numbers.jpeg
+
+# Raw photo dumps / scratch images inside public/ that are not used by the site
+public/assets/event pic/
+public/image.png

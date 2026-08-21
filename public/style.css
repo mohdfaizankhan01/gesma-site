@@ -1003,7 +1003,7 @@ section {
     border-radius: var(--r);
     box-shadow: var(--sh-sm);
     overflow: hidden;
-    /* base transition — stagger rules below override when vis */
+    /* base transition; stagger rules below override when vis */
     transition: opacity 0.4s ease, transform 0.4s ease, box-shadow var(--transition);
 }
 
@@ -2876,9 +2876,9 @@ footer {
 }
 /* tablet: drop all fanoos, keep moon+qandeel pairs → 6 items */
 @media (max-width:900px)  { .hd1,.hd4,.hd7 { display:none; } }
-/* mobile: keep 3 spread items — moon(684) qandeel(1100) qandeel(1412) */
+/* mobile: keep 3 spread items: moon(684) qandeel(1100) qandeel(1412) */
 @media (max-width:600px)  { .hd3,.hd5,.hd8 { display:none; } }
-/* small mobile: keep 2 items in the far-right corner — qandeel(1100) qandeel(1412) */
+/* small mobile: keep 2 items in the far-right corner: qandeel(1100) qandeel(1412) */
 @media (max-width:480px)  { .hd2 { display:none; } }
 
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
