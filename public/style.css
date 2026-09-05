@@ -791,15 +791,25 @@ section {
         margin: 0 0 9px;
     }
     .hsc-hl::after { height: 5px; bottom: 0; }
+    /* On a phone the bubble is a fixed 320px, but the dots and the
+       button only fill about two thirds of the bottom row, leaving the
+       right side of the card visibly empty. Give each its own line and
+       let the button span the card: no dead space, and a full-width tap
+       target instead of a 148px one. */
     .hsc-typing {
+        display: flex;
+        width: fit-content;
         padding: 4px 8px;
-        margin-bottom: 10px;
+        margin-bottom: 9px;
         gap: 3px;
     }
     .hsc-typing span { width: 4px; height: 4px; }
     .hsc-cta {
-        font-size: 11.5px;
-        padding: 7px 13px 7px 14px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        font-size: 12px;
+        padding: 10px 14px;
         gap: 7px;
     }
     .hsc-cta i { font-size: 12px; }
